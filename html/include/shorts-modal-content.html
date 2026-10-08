@@ -1,0 +1,61 @@
+<section class="section--shots">
+    <!-- 타이틀 -->
+    <div class="section__header">
+        <button type="button" class="btn-icon btn-icon--back-w modal__close" aria-label="뒤로가기">
+        <span class="btn-icon__icon"></span>
+        </button>
+        <h2 class="section__title"></h2>
+        <div class="section__util">
+        </div>
+    </div>
+    <div class="shots-card">
+        <div class="shots-card__poster">
+        <video preload="metadata" muted playsinline loop poster="../../assets/images/main/img_main_02_mo.jpg"> <!-- 영상 로딩이 늦어질 경우를 대비해 Poster 사용 -->
+            <source src="../../assets/images/main/video_mo.mp4" type="video/mp4">
+        </video>
+        <div class="shots-card__volumn">
+            <button type="button" class="btn-icon btn-icon--volumn" aria-label="소리 켜기">
+            <span class="btn-icon__icon"></span>
+            </button>
+        </div>
+        <div class="shots-card__util">
+            <div class="shots-card__util-like">
+            <button type="button" class="btn-icon btn-icon--like-w" aria-label="찜하기"> <!-- is-active 활성화 시 -->
+                <span class="btn-icon__icon"></span>
+            </button>
+            <span class="shots-card__util-count">3</span>
+            </div>
+            <button type="button" class="btn-icon btn-icon--share-w" aria-label="공유">
+            <span class="btn-icon__icon"></span>
+            </button>
+            <button type="button" class="btn-icon btn-icon--bookmark" aria-label="북마크">
+            <span class="btn-icon__icon"></span>
+            </button>
+        </div>
+        </div>
+        <div class="shots-card__content">
+        <h3 class="shots-card__title">SHOEMARKER Shorts</h3>
+        <div class="shots-card__products">
+            <div class="shots-card__img">
+            <img loading="lazy" src="../../assets/images/img_product_thumb_02.jpg" alt="나이키 에어맥스 조가 보니" />
+            </div>
+            <div class="shots-card__info">
+            <strong class="product-card__brand">NIKE</strong>
+            <span class="shots-card__name">나이키 에어맥스 조가 보니</span>
+            <div class="shots-card__price">
+                <div class="shots-card__cost">
+                <span class="price">
+                    <span class="price__num">219,000</span>
+                    <span class="price__unit">원</span>
+                </span>
+                </div>
+            </div>
+            </div>
+            <button class="shots-card__count js-bottom-sheet-open" data-target="#shoemarkerShortsModal-listsheet">
+            <span class="shots-card__count-value">9</span>
+            더보기
+            </button>
+        </div>
+        </div>
+    </div>
+</section>

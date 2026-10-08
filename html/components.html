@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커</title>
+
+  <link rel="stylesheet" href="../assets/css/style.min.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <style>
+    /* Guide style */
+    *, ::before, ::after {box-sizing:border-box;}
+    .guide {position:relative; z-index:1; overflow:hidden; width:100%; max-width:1325px; margin:0 auto; padding:48px;}
+    .guide__box {overflow:hidden; margin-top:16px; padding:32px; border:1px solid #ddd;    }
+    .guide__title {margin:80px 0 12px; font-size:28px; font-weight:700; line-height:1.4;}
+    .guide__title:first-child {margin-top:0 !important;}
+    .guide__subtitle {margin:48px 0 4px; font-size:20px; font-weight:700; line-height:1.4;}
+    .guide__subtitle:first-child {margin-top:0 !important;}
+    .guide__table {width:100%; min-width:100%; table-layout:fixed; border-spacing:0; border:1px solid #ddd;}
+    .guide__table th, .guide__table td {min-width:100px; padding:.75rem 1rem; border:0; border-top:1px solid #ddd; vertical-align: middle;}
+    .guide__table thead th {font-weight:500; text-align:left; border:0; background:#fcfcfc;}
+    .guide__table thead tr + tr th {padding-top:0; padding-bottom:10px !important; vertical-align:top;}
+    .guide__table tbody th {font-size:14px; font-weight:500; padding-left:2rem; text-align:left;} 
+    .guide__table tbody tr:hover td, .guide__table tbody tr:hover th {background-color:#f6f6f6;}
+    .guide__table .guide__note {font-size:13px; color:#aaaaaa;}
+  </style>
+</head>
+<body>
+  <div id="wrap" class="page-login">
+
+    <!-- Content -->
+    <main class="container">
+      <section class="section">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">Page title</h2>
+          </div>
+
+          <!-- components -->
+          <div class="guide">
+            <h2 class="guide__title">Guide</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">브레이크 포인트</h3>
+              <ul class="list list--dot">
+                <li>모바일(md) ~767</li>
+                <li>태블릿(lg) 768~1024</li>
+                <li>데스크탑 1025~</li>
+              </ul>
+            </div>
+
+            <h2 class="guide__title">Button</h2>
+            <table class="guide__table">
+              <colgroup>
+                <col style="width:15%">
+                <col style="width:20%">
+                <col style="width:20%">
+                <col style="width:20%">
+                <col style="width:20%">
+                <col style="width:0">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>default</th>
+                  <th>Large</th>
+                  <th>Medium</th>
+                  <th>Small</th>
+                  <th><!--X-Small--></th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th class="guide__note">Size fit-content <br> Height 48px <br>Weight 600</th>
+                  <th class="guide__note">Size fit-content <br> Height 44px <br>Weight 400</th>
+                  <th class="guide__note">Size fit-content <br> Height 32px <br>Weight 500 </th>
+                  <th class="guide__note">Size fit-content <br> Height 28px <br>Weight 400</th>
+                  <th class="guide__note"><!-- --></th>
+                </tr>
+              </thead> 
+              <tbody>
+                <tr>
+                  <th>Primary</th>
+                  <td>
+                    <button type="button" class="btn btn--primary">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--primary btn--lg">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--primary btn--md">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--primary btn--sm">로그인하기</button>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Line</th>
+                  <td>
+                    <button type="button" class="btn btn--line">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--lg">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--md">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--sm">로그인하기</button>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Line secondary</th>
+                  <td>
+                    <button type="button" class="btn btn--line btn--secondary">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--secondary btn--lg">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--secondary btn--md">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--secondary btn--sm">로그인하기</button>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Text</th>
+                  <td>
+                    <button type="button" class="btn btn--text">아이디찾기</button>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Text + underline</th>
+                  <td><button type="button" class="btn btn--text btn--underline">아이디찾기</button></td>
+                  <td><button type="button" class="btn btn--blue btn--text btn--underline">아이디찾기</button></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>block</th>
+                  <td><button type="button" class="btn btn--primary btn--block">로그인하기</button></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Icon</th>
+                  <td>
+                    24px <br>
+                    <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <td>
+                    16px <br>
+                    <button type="button" class="btn-icon btn-icon--sm btn-icon--next">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 class="guide__title">Button Cut Conners (1024px 이하에서만 작동)</h2>
+            <table class="guide__table">
+              <colgroup>
+                <col style="width:15%">
+                <col style="width:20%">
+                <col style="width:20%">
+                <col style="width:20%">
+                <col style="width:20%">
+                <col style="width:0">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>default</th>
+                  <th>Large</th>
+                  <th>Medium</th>
+                  <th>Small</th>
+                  <th><!--X-Small--></th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th class="guide__note">Size fit-content <br> Height 48px <br>Weight 600</th>
+                  <th class="guide__note">Size fit-content <br> Height 44px <br>Weight 400</th>
+                  <th class="guide__note">Size fit-content <br> Height 32px <br>Weight 500 </th>
+                  <th class="guide__note">Size fit-content <br> Height 28px <br>Weight 400</th>
+                  <th class="guide__note"><!-- --></th>
+                </tr>
+              </thead> 
+              <tbody>
+                <tr>
+                  <th>Primary</th>
+                  <td>
+                    <button type="button" class="btn btn--primary btn--cut-conners">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--primary btn--cut-conners btn--lg">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--primary btn--cut-conners btn--md">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--primary btn--cut-conners btn--sm">로그인하기</button>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Line</th>
+                  <td>
+                    <button type="button" class="btn btn--line btn--cut-conners">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--cut-conners btn--lg">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--cut-conners btn--md">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--cut-conners btn--sm">로그인하기</button>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Line secondary</th>
+                  <td>
+                    <button type="button" class="btn btn--line btn--secondary btn--cut-conners">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--secondary btn--cut-conners btn--lg">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--secondary btn--cut-conners btn--md">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--secondary btn--cut-conners btn--sm">로그인하기</button>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Text</th>
+                  <td>
+                    <button type="button" class="btn btn--text">아이디찾기</button>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Text + underline</th>
+                  <td><button type="button" class="btn btn--text btn--underline">아이디찾기</button></td>
+                  <td><button type="button" class="btn btn--blue btn--text btn--underline">아이디찾기</button></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>block</th>
+                  <td><button type="button" class="btn btn--primary btn--cut-conners btn--block">로그인하기</button></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Icon</th>
+                  <td>
+                    24px <br>
+                    <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <td>
+                    16px <br>
+                    <button type="button" class="btn-icon btn-icon--sm btn-icon--next">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 class="guide__title">Icon Button</h2>
+            <table class="guide__table">
+              <colgroup>
+                <col style="width:20%">
+                <col>
+                <col style="width:20%">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>뒤로가기</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <th>다음, 자세히 보기</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--sm btn-icon--next" aria-label="다음, 자세히 보기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>모달 닫기</th>
+                  <td>
+                    <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <th>바텀시트 닫기</th>
+                  <td>
+                    <button type="button" class="bottom-sheet__close btn-icon btn-icon--sheet-close" aria-label="닫기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>필터</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--filter">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <th>공유</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--share" aria-label="공유">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>찜하기</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--like is-active" aria-label="찜하기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <th>선물</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--gift" aria-label="선물하기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 class="guide__title">Button : Icon + Text</h2>
+            <table class="guide__table">
+              <colgroup>
+                <col style="width:20%">
+                <col>
+                <col style="width:20%">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>상세보기</th>
+                  <td>
+                    <button type="button" class="btn-link">상세보기</button>
+                  </td>
+                  <th>담기</th>
+                  <td>
+                    <button type="button" class="btn-cart">
+                      <span class="btn-cart__icon"></span>
+                      <span class="btn-cart__text">담기</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>정렬</th>
+                  <td>
+                    <button type="button" class="sort__btn" aria-label="정렬" aria-expanded="false" aria-controls="sort-layer">
+                      <span class="sort__text">최신순</span>
+                      <span class="sort__icon" aria-hidden="true"></span>
+                    </button>
+                  </td>
+                  <th>검색</th>
+                  <td>
+                    <button type="button" class="btn-search" aria-label="검색">
+                      <span class="btn-search__icon" aria-hidden="true"></span>
+                      <span class="btn-search__text">검색</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>필터</th>
+                  <td>
+                    <button type="button" class="btn-filter" aria-label="필터">
+                      <span class="btn-filter__text">필터</span>
+                      <span class="btn-filter__icon" aria-hidden="true"></span>
+                    </button>
+                  </td>
+                  <th></th>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 class="guide__title">List</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">default</h3>
+              <ul class="list">
+                <li>font-size:14px</li>
+                <li>리스트입니다.</li>
+                <li>리스트입니다.</li>
+              </ul>
+              <h3 class="guide__subtitle">dot list</h3>
+              <ul class="list list--dot">
+                <li>font-size:14px</li>
+                <li>도트 리스트입니다.</li>
+                <li>도트 리스트입니다.</li>
+              </ul>
+              <br>
+              <ul class="list list--dot list--sm">
+                <li>font-size:12px</li>
+                <li>도트 리스트입니다.</li>
+                <li>도트 리스트입니다.</li>
+              </ul>
+            </div>
+
+            <h2 class="guide__title">badge</h2>
+            <div class="guide__box">
+              <span class="badge badge--round">기본배송지</span>
+            </div>
+
+            <h2 class="guide__title">chip</h2>
+            <div class="guide__box">
+              <div class="chip chip--dark">
+                <span class="chip__icon chip__icon--free-shipping" aria-hidden="true"></span>
+                <span class="chip__text">무료배송</span>
+              </div>
+              <div class="chip">
+                <span class="chip__icon chip__icon--free-shipping-b" aria-hidden="true"></span>
+                <span class="chip__text">무료배송</span>
+              </div>
+              <div class="chip">
+                <span class="chip__icon chip__icon--plus" aria-hidden="true"></span>
+                <span class="chip__text">1+1 상품</span>
+              </div>
+              <div class="chip">
+                <span class="chip__icon chip__icon--pickup" aria-hidden="true"></span>
+                <span class="chip__text">매장픽업</span>
+              </div>
+              <div class="chip">
+                <span class="chip__icon chip__icon--giftcard" aria-hidden="true"></span>
+                <span class="chip__text">사은품</span>
+              </div>
+              <div class="chip">
+                <span class="chip__icon chip__icon--installment" aria-hidden="true"></span>
+                <span class="chip__text">무이자 할부</span>
+              </div>
+              <div class="chip">
+                <span class="chip__icon chip__icon--coupon-excluded" aria-hidden="true"></span>
+                <span class="chip__text">쿠폰적용제외</span>
+              </div>
+              <div class="chip">
+                <span class="chip__icon chip__icon--coupon" aria-hidden="true"></span>
+                <span class="chip__text">할인쿠폰</span>
+              </div>
+            </div>
+
+            <h2 class="guide__title">table</h2>
+            <div class="guide__box">
+              <table class="table-row">
+                <colgroup>
+                  <col width="102px">
+                  <col>
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">보증보험</th>
+                    <td>
+                      <div class="radio-group">
+                        <div class="radio">
+                          <input type="radio" id="radio01-1" name="radioSet1" class="radio__input" />
+                          <label for="radio01-1" class="radio__label">발행</label>
+                        </div>
+                        <div class="radio">
+                          <input type="radio" id="radio01-2" name="radioSet1" class="radio__input" />
+                          <label for="radio01-2" class="radio__label">발행 안함</label>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">개인정보 이용동의</th>
+                    <td>
+                      <div class="radio-group">
+                        <div class="radio">
+                          <input type="radio" id="radio02-1" name="radioSet2" class="radio__input" />
+                          <label for="radio02-1" class="radio__label">동의함</label>
+                        </div>
+                        <div class="radio">
+                          <input type="radio" id="radio02-2" name="radioSet2" class="radio__input" />
+                          <label for="radio02-2" class="radio__label">동의안함</label>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">생년월일</th>
+                    <td>
+                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">성별</th>
+                    <td>
+                      <div class="radio-group">
+                        <div class="radio">
+                          <input type="radio" id="radio03-1" name="radioSet3" class="radio__input" />
+                          <label for="radio03-1" class="radio__label">남</label>
+                        </div>
+                        <div class="radio">
+                          <input type="radio" id="radio03-2" name="radioSet3" class="radio__input" />
+                          <label for="radio03-2" class="radio__label">여</label>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 class="guide__title">Form Input</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">default</h3>
+              <div class="form__field">
+                <label for="input1" class="form__label">이름</label>
+                <input type="text" id="input1" class="form__input" value="" placeholder="이름을 입력해주세요"/>
+              </div>
+
+              <h3 class="guide__subtitle">disabled</h3>
+              <div class="form__field">
+                <label for="input2" class="form__label">이름</label>
+                <input type="text" id="input2" class="form__input" value="" disabled/>
+              </div>
+
+              <h3 class="guide__subtitle">required</h3>
+              <div class="form__field is-required">
+                <label for="input3" class="form__label">이름</label>
+                <input type="text" id="input3" class="form__input" value=""/>
+              </div>
+
+              <h3 class="guide__subtitle">readonly</h3>
+              <div class="form__field is-readonly">
+                <label for="input4" class="form__label">이름</label>
+                <input type="text" id="input4" class="form__input" value="readonly" readonly/>
+              </div>
+              
+              <h3 class="guide__subtitle">button + description</h3>
+              <div class="form__field is-required">
+                <label for="input5" class="form__label">아이디</label>
+                <div class="form__control">
+                  <input type="text" id="input5" class="form__input"/>
+                  <button type="button" class="btn btn--line btn--sm">중복확인</button>
+                </div>
+                <p class="form__desc">영문 또는 영문과 숫자조합 6~12자리</p>
+              </div>
+
+              <h3 class="guide__subtitle">success, error message</h3>
+              <div class="form__field is-required is-error">
+                <label for="input6" class="form__label">새로운 비밀번호 확인</label>
+                <input type="password" id="input6" class="form__input" placeholder="한 번 더 비밀번호를 입력해 주세요!"/>
+                <p class="form__message">동일한 비밀번호를 입력해 주세요.</p>
+                <!-- <p class="form__message">비밀번호 일치</p> -->
+              </div>
+              <br>
+              <div class="form__field is-required is-success">
+                <label for="input7" class="form__label">새로운 비밀번호 확인</label>
+                <input type="password" id="input7" class="form__input" placeholder="한 번 더 비밀번호를 입력해 주세요!"/>
+                <!-- <p class="form__message">동일한 비밀번호를 입력해 주세요.</p> -->
+                <p class="form__message">비밀번호 일치</p>
+              </div>
+            </div>
+
+            <h2 class="guide__title">Form Checkbox</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">default</h3>
+              <div class="checkbox">
+                <input type="checkbox" id="check1" class="checkbox__input" />
+                <label for="check1" class="checkbox__label">자동 로그인</label>
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" id="check2"  class="checkbox__input"/>
+                <label for="check2" class="checkbox__label">아이디 저장</label>
+              </div>
+              <h3 class="guide__subtitle">disabled</h3>
+              <div class="checkbox">
+                <input type="checkbox" id="check3" class="checkbox__input" disabled/>
+                <label for="check3" class="checkbox__label">자동 로그인</label>
+              </div>
+              <h3 class="guide__subtitle">label hide</h3>
+              <div class="checkbox">
+                <input type="checkbox" id="check4" class="checkbox__input"/>
+                <label for="check4" class="checkbox__label checkbox__label--hide">자동 로그인</label>
+              </div>
+              <h3 class="guide__subtitle">button type</h3>
+              <div class="checkbox">
+                <input type="checkbox" id="check-btn01" class="checkbox__input button"/>
+                <label for="check-btn01" class="checkbox__label checkbox__label--button btn btn--line btn--secondary btn--md">체크 1</label>
+              </div>
+              <h3 class="guide__subtitle">button type + disabled</h3>
+              <div class="checkbox">
+                <input type="checkbox" id="check-btn02" class="checkbox__input button" disabled/>
+                <label for="check-btn02" class="checkbox__label checkbox__label--button btn btn--line btn--secondary btn--md">체크 1</label>
+              </div>
+              <h3 class="guide__subtitle">button type</h3>
+              <div class="checkbox">
+                <input type="checkbox" id="check-btn03-1" class="checkbox__input color"/>
+                <label for="check-btn03-1" class="checkbox__label checkbox__label--color" style="--status-color:#000000;">블랙</label>
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" id="check-btn03-2" class="checkbox__input color"/>
+                <label for="check-btn03-2" class="checkbox__label checkbox__label--color" style="--status-color:#FFFFFF;">화이트</label>
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" id="check-btn03-3" class="checkbox__input color" checked/>
+                <label for="check-btn03-3" class="checkbox__label checkbox__label--color" style="--status-color:#FFFFFF;">화이트</label>
+              </div>
+              <h3 class="guide__subtitle">button type + disabled</h3>
+              <div class="checkbox">
+                <input type="checkbox" id="check-btn04-1" class="checkbox__input color" disabled/>
+                <label for="check-btn04-1" class="checkbox__label checkbox__label--color" style="--status-color:#000000;">블랙</label>
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" id="check-btn04-2" class="checkbox__input color" disabled/>
+                <label for="check-btn04-2" class="checkbox__label checkbox__label--color" style="--status-color:#FFFFFF;">화이트</label>
+              </div>
+            </div>
+
+            <h2 class="guide__title">Form Radio</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">default</h3>
+              <div class="radio">
+                <input type="radio" id="radio05-1" name="radioSet05" class="radio__input" />
+                <label for="radio05-1" class="radio__label">휴대폰번호</label>
+              </div>
+              <div class="radio">
+                <input type="radio" id="radio05-2" name="radioSet05" class="radio__input" />
+                <label for="radio05-2" class="radio__label">이메일 주소</label>
+              </div>
+              <h3 class="guide__subtitle">button type</h3>
+              <div class="radio-group">
+                <div class="radio-btn">
+                  <input type="radio" id="radio-btnst01-1" name="radioSet-btnst01" class="radio-btn__input" checked />
+                  <label for="radio-btnst01-1" class="radio-btn__label">전체</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio-btnst01-2" name="radioSet-btnst01" class="radio-btn__input" />
+                  <label for="radio-btnst01-2" class="radio-btn__label">주문접수</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio-btnst01-3" name="radioSet-btnst01" class="radio-btn__input" />
+                  <label for="radio-btnst01-3" class="radio-btn__label">결제완료</label>
+                </div>
+              </div>
+
+              <h3 class="guide__subtitle">button type - 한 행에 3개씩</h3>
+              <div class="radio-group radio-group--col3">
+                <div class="radio-btn">
+                  <input type="radio" id="radio-btnst02-1" name="radioSet-btnst02" class="radio-btn__input" />
+                  <label for="radio-btnst02-1" class="radio-btn__label">1개월</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio-btnst02-2" name="radioSet-btnst02" class="radio-btn__input" checked />
+                  <label for="radio-btnst02-2" class="radio-btn__label">3개월</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio-btnst02-3" name="radioSet-btnst02" class="radio-btn__input" />
+                  <label for="radio-btnst02-3" class="radio-btn__label">6개월</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio-btnst02-4" name="radioSet-btnst02" class="radio-btn__input" />
+                  <label for="radio-btnst02-4" class="radio-btn__label">직접입력</label>
+                </div>
+              </div>
+
+              <h3 class="guide__subtitle">button type small</h3>
+              <div class="radio-group">
+                <div class="radio-btn radio-btn--sm">
+                  <input type="radio" id="radio-btnst03-1" name="radioSet-btnst03" class="radio-btn__input" />
+                  <label for="radio-btnst03-1" class="radio-btn__label">1개월</label>
+                </div>
+                <div class="radio-btn radio-btn--sm">
+                  <input type="radio" id="radio-btnst03-2" name="radioSet-btnst03" class="radio-btn__input" checked />
+                  <label for="radio-btnst03-2" class="radio-btn__label">3개월</label>
+                </div>      
+                <div class="radio-btn radio-btn--sm">
+                  <input type="radio" id="radio-btnst03-3" name="radioSet-btnst03" class="radio-btn__input" />
+                  <label for="radio-btnst03-3" class="radio-btn__label">6개월</label>
+                </div>      
+                <div class="radio-btn radio-btn--sm">
+                  <input type="radio" id="radio-btnst03-4" name="radioSet-btnst03" class="radio-btn__input" />
+                  <label for="radio-btnst03-4" class="radio-btn__label">직접입력</label>
+                </div>
+              </div>
+
+              <h3 class="guide__subtitle">button type small line</h3>
+              <div class="radio-group">
+                <div class="radio-btn radio-btn--sm radio-btn--line">
+                  <input type="radio" id="radio-btnst04-1" name="radioSet-btnst04" class="radio-btn__input" />
+                  <label for="radio-btnst04-1" class="radio-btn__label">1개월</label>
+                </div>
+                <div class="radio-btn radio-btn--sm radio-btn--line">
+                  <input type="radio" id="radio-btnst04-2" name="radioSet-btnst04" class="radio-btn__input" checked />
+                  <label for="radio-btnst04-2" class="radio-btn__label">3개월</label>
+                </div>
+                <div class="radio-btn radio-btn--sm radio-btn--line">
+                  <input type="radio" id="radio-btnst04-3" name="radioSet-btnst04" class="radio-btn__input" />
+                  <label for="radio-btnst04-3" class="radio-btn__label">6개월</label>
+                </div>
+                <div class="radio-btn radio-btn--sm radio-btn--line">
+                  <input type="radio" id="radio-btnst04-4" name="radioSet-btnst04" class="radio-btn__input" />
+                  <label for="radio-btnst04-4" class="radio-btn__label">직접입력</label>
+                </div>
+              </div>
+
+              <h3 class="guide__subtitle">button type tag wrap</h3>
+              <div class="radio-group radio-group--tags radio-group--wrap">
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio-btnst05-1" name="radioSet-btnst05" class="radio-btn__input" checked />
+                  <label for="radio-btnst05-1" class="radio-btn__label">전체</label>
+                </div>
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio-btnst05-2" name="radioSet-btnst05" class="radio-btn__input"/>
+                  <label for="radio-btnst05-2" class="radio-btn__label">디자인</label>
+                </div>      
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio-btnst05-3" name="radioSet-btnst05" class="radio-btn__input" />
+                  <label for="radio-btnst05-3" class="radio-btn__label">마감처리</label>
+                </div>      
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio-btnst05-4" name="radioSet-btnst05" class="radio-btn__input" />
+                  <label for="radio-btnst05-4" class="radio-btn__label">착용감</label>
+                </div>
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio-btnst05-5" name="radioSet-btnst05" class="radio-btn__input" />
+                  <label for="radio-btnst05-5" class="radio-btn__label">라인핏</label>
+                </div>
+              </div>
+
+              <h3 class="guide__subtitle">button type tag scroll</h3>
+              <div class="radio-group radio-group--tags radio-group--scroll">
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio-btnst06-1" name="radioSet-btnst06" class="radio-btn__input" checked />
+                  <label for="radio-btnst06-1" class="radio-btn__label">전체</label>
+                </div>
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio-btnst06-2" name="radioSet-btnst06" class="radio-btn__input"/>
+                  <label for="radio-btnst06-2" class="radio-btn__label">디자인</label>
+                </div>      
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio-btnst06-3" name="radioSet-btnst06" class="radio-btn__input" />
+                  <label for="radio-btnst06-3" class="radio-btn__label">마감처리</label>
+                </div>      
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio-btnst06-4" name="radioSet-btnst06" class="radio-btn__input" />
+                  <label for="radio-btnst06-4" class="radio-btn__label">착용감</label>
+                </div>
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio-btnst06-5" name="radioSet-btnst06" class="radio-btn__input" />
+                  <label for="radio-btnst06-5" class="radio-btn__label">라인핏</label>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="guide__title">Range</h2>
+            <div class="guide__box">
+              <div class="price-range-filter">
+                <div class="price-input-container">
+                  <div class="input-group">
+                    <div class="input-wrapper">
+                      <input type="text" class="min-input form__input" value="0">
+                      <span>원</span>
+                    </div>
+                  </div>
+                  <span class="separator">~</span>
+                  <div class="input-group">
+                    <div class="input-wrapper">
+                      <input type="text" class="max-input form__input" value="200,000">
+                      <span>원</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider-container">
+                  <div class="slider-track" id="slider-track"></div>
+                  <div class="range-input">
+                    <input type="range" class="min-range" min="0" max="200000" value="0" step="1000">
+                    <input type="range" class="max-range" min="0" max="200000" value="200000" step="1000">
+                  </div>
+                </div>
+                <div class="preset-buttons">
+                  <button class="btn btn--line btn--secondary btn--md btn-set-price" data-min="0" data-max="50000">0~5만 원</button>
+                  <button class="btn btn--line btn--secondary btn--md btn-set-price" data-min="50000" data-max="100000">5만~10만 원</button>
+                  <button class="btn btn--line btn--secondary btn--md btn-set-price" data-min="100000" data-max="200000">10만~20만 원</button>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="guide__title">Select</h2>
+            <div class="guide__box">
+              <div class="select">
+                <label for="termsDate" class="select__label select__label--hide">개정 약관 날짜 선택</label>
+                <div class="select__box">
+                  <select id="termsDate" class="select__field">
+                    <option value="">옵션1</option>
+                    <option value="">옵션2</option>
+                    <option value="">옵션3</option>
+                  </select>
+                </div>
+              </div>
+              <br>
+              <div class="select">
+                <label for="cancelReason" class="select__label">사유 선택</label>
+                <div class="select__box">
+                  <select id="cancelReason" class="select__field">
+                    <!-- placeholder -->
+                    <option value="" disabled selected hidden>취소 사유를 선택해 주세요!</option>
+                    <option value="">옵션1</option>
+                    <option value="">옵션2</option>
+                    <option value="">옵션3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="guide__title">Textarea</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">default</h3>
+              <div class="textarea">
+                <label for="cancelReasonDetail" class="textarea__label">상세사유 입력</label>
+                <textarea
+                  name="cancelReasonDetail"
+                  id="cancelReasonDetail" 
+                  class="textarea__field"
+                  placeholder="사유를 입력해 주세요!"
+                ></textarea>
+              </div>
+
+              <h3 class="guide__subtitle">counter</h3>
+              <div class="textarea is-required">
+                <label for="cancelReasonDetail" class="textarea__label">상세사유 입력</label>
+                <textarea
+                  name="inquiryContent"
+                  id="inquiryContent" 
+                  class="textarea__field"
+                  placeholder="문의 내용을 입력해 주세요."
+                  maxlength="200"
+                ></textarea>
+                <div class="textarea__count">
+                  <span class="textarea__count-current" id="currentCount">0</span>
+                  <span class="textarea__count-max"> / 200</span>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="guide__title">Alert</h2>
+            <div class="guide__box">
+              <button type="button" class="btn btn--md btn--line js-alert-open" data-target="#confirmPurchaseAlert">구매확정</button>
+            </div>
+
+            <h2 class="guide__title">Modal</h2>
+            <div class="guide__box">
+              <button type="button" class="js-modal-open btn btn--primary btn--md" data-target="#modal1">Modal open</button>
+            </div>
+
+            <h2 class="guide__title">Bottom Sheet</h2>
+            <div class="guide__box">
+              <button type="button" class="filter__btn btn-icon btn-icon--filter js-bottom-sheet-open" data-target="#filterSheet">
+                <span class="btn-icon__icon"></span>
+              </button>
+            </div>
+
+            <h2 class="guide__title">Tabs</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitl">Line type</h3><br>
+              <div class="tab tab--line js-tabs">
+                <!-- 탭 메뉴 -->
+                <div class="tab__list" role="tablist">
+                  <!-- 활성화 상태 is-active -->
+                  <button type="button" role="tab" class="tab__btn js-tab-btn is-active" aria-selected="true">
+                    마이 Picks
+                  </button>
+                  <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">
+                    최근 본 상품
+                  </button>
+                </div>
+
+                <!-- 탭 컨텐츠 -->
+                <div class="tab__panels">
+                  <div class="tab__panel js-tab-panel is-active">
+                    <div class="empty">
+                      <div class="empty__content">
+                        <span class="empty__icon empty__icon--message"></span>
+                        <p class="empty__text">제품이 없습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab__panel js-tab-panel">
+                    <div class="empty">
+                      <div class="empty__content">
+                        <span class="empty__icon empty__icon--message"></span>
+                        <p class="empty__text">제품이 없습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <h3 class="guide__subtitl">Button type</h3><br>
+              <div class="tab tab--fill js-tabs">
+                <!-- 탭 메뉴 -->
+                <div class="tab__list" role="tablist">
+                  <!-- 활성화 상태 is-active -->
+                  <button type="button" role="tab" class="tab__btn js-tab-btn is-active" aria-selected="true">
+                    상품
+                  </button>
+                  <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">
+                    주문
+                  </button>
+                  <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">
+                    기타
+                  </button>
+                </div>
+
+                <!-- 탭 컨텐츠 -->
+                <div class="tab__panels">
+                  <div class="tab__panel js-tab-panel is-active">
+                    <h4 class="qna-regist__subtitle">문의 예시</h4>
+                    <ul class="list list--sm list--dot">
+                      <li>상품의 배송기간이 얼마나 되나요?</li>
+                      <li>품절 상품 재입고는 언제 되나요​?</li>
+                    </ul>
+                  </div>
+                  <div class="tab__panel js-tab-panel">
+                    <h4 class="qna-regist__subtitle">문의 예시</h4>
+                    <ul class="list list--sm list--dot">
+                      <li>상품의 교환 반품 환불 절차가 궁금해요</li>
+                      <li>배송 전 주소지 변경이 가능 할까요?</li>
+                    </ul>
+                  </div>
+                  <div class="tab__panel js-tab-panel">
+                    <h4 class="qna-regist__subtitle">문의 예시</h4>
+                    <ul class="list list--sm list--dot">
+                      <li>상품의 교환 반품 환불 절차가 궁금해요</li>
+                      <li>배송 전 주소지 변경이 가능 할까요?</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <h3 class="guide__subtitl">Rounded Button type</h3><br>
+              <div class="tab tab--pill js-tabs">
+                <!-- 탭 메뉴 -->
+                <div class="tab__list" role="tablist">
+                  <!-- 활성화 상태 is-active -->
+                  <button type="button" role="tab" class="tab__btn js-tab-btn is-active" aria-selected="true">
+                    상품
+                  </button>
+                  <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">
+                    주문
+                  </button>
+                  <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">
+                    기타
+                  </button>
+                </div>
+
+                <!-- 탭 컨텐츠 -->
+                <div class="tab__panels">
+                  <div class="tab__panel js-tab-panel is-active">
+                    <h4 class="qna-regist__subtitle">문의 예시</h4>
+                    <ul class="list list--sm list--dot">
+                      <li>상품의 배송기간이 얼마나 되나요?</li>
+                      <li>품절 상품 재입고는 언제 되나요​?</li>
+                    </ul>
+                  </div>
+                  <div class="tab__panel js-tab-panel">
+                    <h4 class="qna-regist__subtitle">문의 예시</h4>
+                    <ul class="list list--sm list--dot">
+                      <li>상품의 교환 반품 환불 절차가 궁금해요</li>
+                      <li>배송 전 주소지 변경이 가능 할까요?</li>
+                    </ul>
+                  </div>
+                  <div class="tab__panel js-tab-panel">
+                    <h4 class="qna-regist__subtitle">문의 예시</h4>
+                    <ul class="list list--sm list--dot">
+                      <li>상품의 교환 반품 환불 절차가 궁금해요</li>
+                      <li>배송 전 주소지 변경이 가능 할까요?</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="guide__title">Accordion</h2>
+            <div class="guide__box">              
+              <h3 class="guide__subtitl">Default</h3>
+              <div class="accordion">
+                <div class="accordion__item">
+                  <button type="button" class="accordion__header">
+                    <p class="accordion__title">
+                      아코디언 타이틀
+                    </p>
+                  </button>
+                  <div class="accordion__collapse">
+                    <div class="accordion__body">
+                      아코디언 컨텐츠
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="guide__subtitl">FAQ</h3>
+              <div class="accordion accordion--faq">
+                <div class="accordion__item">
+                  <button type="button" class="accordion__header">
+                    <div class="accordion__question">
+                      <div class="accordion__label">
+                        <span class="accordion__keyword">[상품]</span>
+                        <span>- 총 00건의 내용이 있습니다.</span>
+                      </div>
+                      <p class="accordion__title">
+                        쇼핑몰 사진과 실물의 색상이 다릅니다.
+                      </p>
+                    </div>
+                  </button>
+                  <div class="accordion__collapse">
+                    <div class="accordion__body">
+                      <p class="accordion__answer">
+                        상품 촬영 시 실제 색상과 최대한 유사한 색상을 표현하려고 노력하고 있으나 온라인 쇼핑몰 특성 상 상품이미지는출력되는 모니터 환경에 따라 조금씩 차이가 있는점 참고 부탁드립니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <button type="button" class="accordion__header">
+                    <div class="accordion__question">
+                      <div class="accordion__label">
+                        <span class="accordion__keyword">[상품]</span>
+                        <!-- <span>- 총 00건의 내용이 있습니다.</span> -->
+                      </div>
+                      <p class="accordion__title">
+                        품절된 상품은 언제 재입고가 되나요?
+                      </p>
+                    </div>
+                  </button>
+                  <div class="accordion__collapse">
+                    <div class="accordion__body">
+                      <p class="accordion__answer">
+                        품절된 상품 및 사이즈에 대한 정확한 재입고 여부 안내가 어려운 점 양해부탁드립니다. <br> 오프라인 재고 확인을 원하실 경우 고객관리팀으로 연락 주시면 신속한 안내 도와드리겠습니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <button type="button" class="accordion__header">
+                    <div class="accordion__question">
+                      <div class="accordion__label">
+                        <span class="accordion__keyword">[상품]</span>
+                        <!-- <span>- 총 00건의 내용이 있습니다.</span> -->
+                      </div>
+                      <p class="accordion__title">
+                        모든 제품 정품이 맞나요?
+                      </p>
+                    </div>
+                  </button>
+                  <div class="accordion__collapse">
+                    <div class="accordion__body">
+                      <p class="accordion__answer">
+                        저희 슈마커는 각 브랜드 본사와 정식으로 계약을 맺어 상품 공급을 받는 공식인증업체입니다. <br> 모든 상품 100% 정품이기에 정식 A/S 진행 또한 가능하기에 믿고 구매해주셔도 됩니다. <br> (일부 병행수입 상품일 경우 A/S 진행 불가)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <button type="button" class="accordion__header">
+                    <div class="accordion__question">
+                      <div class="accordion__label">
+                        <span class="accordion__keyword">[배송]</span>
+                        <!-- <span>- 총 00건의 내용이 있습니다.</span> -->
+                      </div>
+                      <p class="accordion__title">
+                        주문 후 주소 변경이 가능한가요?
+                      </p>
+                    </div>
+                  </button>
+                  <div class="accordion__collapse">
+                    <div class="accordion__body">
+                      <p class="accordion__answer">
+                        결제 완료 상태일 경우 - 배송지 및 사이즈 변경이 가능 <br>상품 준비중 상태일 경우 - 불가 <br>가장 정확한 확인 방법은 상담톡,게시판 혹은 고객관린팀으로 연락주셔야만 처리가 가능합니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <button type="button" class="accordion__header">
+                    <div class="accordion__question">
+                      <div class="accordion__label">
+                        <span class="accordion__keyword">[배송]</span>
+                        <!-- <span>- 총 00건의 내용이 있습니다.</span> -->
+                      </div>
+                      <p class="accordion__title">
+                        운송장번호가 조회되지 않습니다.
+                      </p>
+                    </div>
+                  </button>
+                  <div class="accordion__collapse">
+                    <div class="accordion__body">
+                      <p class="accordion__answer">
+                        당일 채번된 운송장번호는 아직 택배사측 전달 전이기에 배송이 시작되지 않은 상태입니다. <br>운송장번호 조회는 오후 6시 이후 또는 익일부터 조회가 가능한 점 참고 부탁드립니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br><br>
+              <h3 class="guide__subtitl">Q&A</h3>
+              <div class="accordion accordion--qna">
+                <div class="accordion__item">
+                  <button type="button" class="accordion__header">
+                    <div class="accordion__question">
+                      <div class="accordion__label">
+                        <span>[답변 대기중]</span>
+                        <span>2026.03.26 00:00:00</span>
+                      </div>
+                      <p class="accordion__title">
+                          주문 상품 사이즈 변경 가능 할까요?
+                      </p>
+                    </div>
+                  </button>
+                  <div class="accordion__collapse">
+                    <div class="accordion__body">
+                      <div class="accordion__label">
+                        <span>[답변 내용]</span>
+                        <!-- <span>2026.05.12 15:30</span> -->
+                      </div>
+                      <p class="accordion__answer">
+                        답변 대기 중입니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <button type="button" class="accordion__header">
+                    <div class="accordion__question">
+                      <div class="accordion__label">
+                        <span>[답변완료]</span>
+                        <span>2026.05.12 15:30</span>
+                      </div>
+                      <p class="accordion__title">
+                        주문 상품 사이즈 변경 가능한가요?
+                      </p>
+                    </div>
+                  </button>
+                  <div class="accordion__collapse">
+                    <div class="accordion__body">
+                      <div class="accordion__label">
+                        <span>[답변 내용]</span>
+                        <span>2026.05.12 15:30</span>
+                      </div>
+                      <p class="accordion__answer">
+                        항상 고객님의 불편함을 가장 먼저 걱정하고 해결하는 슈마커 플러스입니다. 고객님께서 말씀하신 주문 상품 이 첨부해 주신 이미지 확인 상 오배송으로 확인되었습니다. 서비스 이용에 불편을 드려 죄송합니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br><br>
+              <h3 class="guide__subtitl">상품문의 Q&A</h3><br>
+              <div class="accordion accordion--inquiry">
+                <!-- [s] 답변대기 / 비공개 -->
+                <div class="accordion__item">
+                  <button type="button" class="accordion__header">
+                    <span class="accordion__status">답변대기</span>
+                    <!-- 비공개일 경우 .secret 추가 -->
+                    <strong class="accordion__title">입금완료</strong>
+                    <div class="accordion__info">
+                      <span class="accordion__author">banana******</span>
+                      <span class="accordion__date">2026.03.02</span>
+                    </div>
+                  </button>
+                  <div class="accordion__collapse">
+                    <div class="accordion__body">
+                      <div class="accordion__qa accordion__qa--question">
+                        <p class="accordion__qa-text">배송이 언제되는건가요? 배송이 언제되는건가요? 배송이 언제되는건가요? 배송이 언제되는건가요? 배송이 언제되는건가요? 배송이 언제되는건가요? 배송이 언제되는건가요? 배송이 언제되는건가요?</p>
+                        <div class="accordion__qa-actions">
+                          <button type="button" class="accordion__action-btn">수정</button>
+                          <button type="button" class="accordion__action-btn">삭제</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- [e] 답변완료 / 비공개 -->
+                <!-- [s] 답변완료 -->
+                <div class="accordion__item">
+                  <button type="button" class="accordion__header">
+                    <span class="accordion__status">답변완료</span>
+                    <!-- 비공개일 경우 .secret 추가 -->
+                    <strong class="accordion__title secret">재입고 문의</strong>
+                    <div class="accordion__info">
+                      <span class="accordion__author">banana******</span>
+                      <span class="accordion__date">2026.03.02</span>
+                    </div>
+                  </button>
+                  <div class="accordion__collapse">
+                    <div class="accordion__body">
+                      <div class="accordion__qa accordion__qa--question">
+                        <p class="accordion__qa-text">재입고 예정일이 언제 인가요??</p>
+                        <div class="accordion__qa-actions">
+                          <button type="button" class="accordion__action-btn">삭제</button>
+                        </div>
+                      </div>
+                      <div class="accordion__qa accordion__qa--answer">
+                        <p class="accordion__qa-text">
+                          안녕하세요 고객님, 해당 제품 아직 정확한 재입고 일자가 나와있지 않아 안내드리기가 어렵습니다. <br>만족스러운 답변을 드리지 못해 죄송합니다. <br>감사합니다. 좋은 하루 보내세요!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- [e] 답변완료 -->
+                <!-- [s] 답변완료 -->
+                <div class="accordion__item">
+                  <button type="button" class="accordion__header">
+                    <span class="accordion__status">답변완료</span>
+                    <!-- 비공개일 경우 .secret 추가 -->
+                    <strong class="accordion__title secret">재입고 문의</strong>
+                    <div class="accordion__info">
+                      <span class="accordion__author">banana******</span>
+                      <span class="accordion__date">2026.03.02</span>
+                    </div>
+                  </button>
+                  <div class="accordion__collapse">
+                    <div class="accordion__body">
+                      <div class="accordion__qa accordion__qa--question">
+                        <p class="accordion__qa-text">재입고 예정일이 언제 인가요??</p>
+                        <div class="accordion__qa-actions">
+                          <button type="button" class="accordion__action-btn">삭제</button>
+                        </div>
+                      </div>
+                      <div class="accordion__qa accordion__qa--answer">
+                        <p class="accordion__qa-text">
+                          안녕하세요 고객님, 해당 제품 아직 정확한 재입고 일자가 나와있지 않아 안내드리기가 어렵습니다. <br>만족스러운 답변을 드리지 못해 죄송합니다. <br>감사합니다. 좋은 하루 보내세요!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- [e] 답변완료 -->
+                <!-- [s] 답변완료 -->
+                <div class="accordion__item">
+                  <button type="button" class="accordion__header">
+                    <span class="accordion__status">답변완료</span>
+                    <!-- 비공개일 경우 .secret 추가 -->
+                    <strong class="accordion__title secret">재입고 문의</strong>
+                    <div class="accordion__info">
+                      <span class="accordion__author">banana******</span>
+                      <span class="accordion__date">2026.03.02</span>
+                    </div>
+                  </button>
+                  <div class="accordion__collapse">
+                    <div class="accordion__body">
+                      <div class="accordion__qa accordion__qa--question">
+                        <p class="accordion__qa-text">재입고 예정일이 언제 인가요??</p>
+                        <div class="accordion__qa-actions">
+                          <button type="button" class="accordion__action-btn">삭제</button>
+                        </div>
+                      </div>
+                      <div class="accordion__qa accordion__qa--answer">
+                        <p class="accordion__qa-text">
+                          안녕하세요 고객님, 해당 제품 아직 정확한 재입고 일자가 나와있지 않아 안내드리기가 어렵습니다. <br>만족스러운 답변을 드리지 못해 죄송합니다. <br>감사합니다. 좋은 하루 보내세요!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- [e] 답변완료 -->
+                <!-- [s] 답변완료 -->
+                <div class="accordion__item">
+                  <button type="button" class="accordion__header">
+                    <span class="accordion__status">답변완료</span>
+                    <!-- 비공개일 경우 .secret 추가 -->
+                    <strong class="accordion__title secret">재입고 문의</strong>
+                    <div class="accordion__info">
+                      <span class="accordion__author">banana******</span>
+                      <span class="accordion__date">2026.03.02</span>
+                    </div>
+                  </button>
+                  <div class="accordion__collapse">
+                    <div class="accordion__body">
+                      <div class="accordion__qa accordion__qa--question">
+                        <p class="accordion__qa-text">재입고 예정일이 언제 인가요??</p>
+                        <div class="accordion__qa-actions">
+                          <button type="button" class="accordion__action-btn">삭제</button>
+                        </div>
+                      </div>
+                      <div class="accordion__qa accordion__qa--answer">
+                        <p class="accordion__qa-text">
+                          안녕하세요 고객님, 해당 제품 아직 정확한 재입고 일자가 나와있지 않아 안내드리기가 어렵습니다. <br>만족스러운 답변을 드리지 못해 죄송합니다. <br>감사합니다. 좋은 하루 보내세요!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- [e] 답변완료 -->
+              </div>
+            </div>
+
+            <h2 class="guide__title">Pagination</h2>
+            <div class="guide__box">
+              <div class="pagination">
+                <button class="pagination__btn pagination__btn--first">처음으로</button>
+                <button class="pagination__btn pagination__btn--prev">이전으로</button>
+                <ul class="pagination__list">
+                  <li><button class="pagination__btn">1</button></li>
+                  <li><button class="pagination__btn">2</button></li>
+                  <li><button class="pagination__btn is-active">3</button></li>
+                  <li><button class="pagination__btn">4</button></li>
+                  <li><button class="pagination__btn">5</button></li>
+                </ul>
+                <button class="pagination__btn pagination__btn--next">다음으로</button>
+                <button class="pagination__btn pagination__btn--end">끝으로</button>
+              </div>
+            </div>
+
+            <h2 class="guide__title">상품 UI</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">row</h3>
+              <!-- <div class="product-card">
+                <a href="/" class="product-card__link">
+                  <div class="product-card__img">
+                    <img src="../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                  </div>
+                  <div class="product-card__info">
+                    <span class="product-card__brand">NIKE</span>
+                    <span class="product-card__name">나이키 알파플라이 3글램</span>
+                    <div class="product-card__price">
+                      <span class="product-card__percent">12%</span>
+                      <span class="product-card__price-value">
+                        <span class="product-card__price-number">349,000</span>
+                        <span class="product-card__price-currency">원</span>
+                      </span>
+                    </div>
+                  </a>
+                  </div>
+              </div> -->
+              <h3 class="guide__subtitle">column</h3>
+              <div class="order-group">
+                <div class="order-group__body">
+                  <div class="order-group__content">
+                    <!-- [s] item -->
+                    <div class="order-item">
+                      <div class="order-item__thumb">
+                        <img src="../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                      </div>
+                      <div class="order-item__content">
+                        <div class="order-item__content-left">
+                          <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                          <ul class="order-item__meta">
+                            <li class="order-item__meta-row">
+                              <span class="order-item__meta-label">옵션</span>
+                              <span class="order-item__meta-value">225 / White</span>
+                            </li>
+                            <li class="order-item__meta-row">
+                              <span class="order-item__meta-label">수량</span>
+                              <span class="order-item__meta-value">1개</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="order-item__price">
+                          <!-- 정가 -->
+                          <div class="order-item__price-origin">
+                            <span class="price">
+                              <span class="price__num">219,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                          <!-- 금액 -->
+                          <div class="order-item__price-cost">
+                            <span class="price">
+                              <span class="price__num">199,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [e] item -->
+                  </div>
+                </div>
+              </div>
+              <h3 class="guide__subtitle">column + checkbox</h3>
+              <!-- 상품 + 체크박스 order-group--selectable 추가 -->
+              <div class="order-group order-group--selectable">
+                <div class="order-group__body">
+                  <div class="order-group__content">
+                    <!-- [s] item -->
+                    <div class="order-item">
+                      <div class="order-item__check">
+                        <div class="checkbox">
+                          <input type="checkbox" id="orderItemCheck1" class="checkbox__input"/>
+                          <label for="orderItemCheck1" class="checkbox__label checkbox__label--hide">상품 선택</label>
+                        </div>
+                      </div>
+                      <div class="order-item__thumb">
+                        <img src="../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                      </div>
+                      <div class="order-item__content">
+                        <div class="order-item__content-left">
+                          <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                          <ul class="order-item__meta">
+                            <li class="order-item__meta-row">
+                              <span class="order-item__meta-label">옵션</span>
+                              <span class="order-item__meta-value">225 / White</span>
+                            </li>
+                            <li class="order-item__meta-row">
+                              <span class="order-item__meta-label">수량</span>
+                              <span class="order-item__meta-value">1개</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="order-item__price">
+                          <!-- 정가 -->
+                          <div class="order-item__price-origin">
+                            <span class="price">
+                              <span class="price__num">219,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                          <!-- 금액 -->
+                          <div class="order-item__price-cost">
+                            <span class="price">
+                              <span class="price__num">199,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [e] item -->
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <h2 class="guide__title">empty</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">text + icon</h3>
+              <div class="empty">
+                <div class="empty__content">
+                  <span class="empty__icon empty__icon--message"></span>
+                  <p class="empty__text">제품이 없습니다.</p>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="guide__title">Loading</h2>
+            <div class="guide__box">
+              <span class="loading__spinner" aria-hidden="true"></span>
+              <span class="loading__text">로딩 중입니다</span>
+              <br>
+              <ul class="list list--dot">
+                <li>실 사용 코드는 아래 주석 참고</li>
+              </ul>
+              <!--
+                Loading
+                - 노출: body에 is-loading / .loading에 is-active 추가
+                - 숨김: body에 is-loading /.loading에서 is-active 제거
+              -->
+              <!-- <div class="loading" id="loading" role="status" aria-live="polite">
+                <span class="loading__spinner" aria-hidden="true"></span>
+                <span class="loading__text">로딩 중입니다</span>
+              </div> -->              
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <!-- modal -->
+  <div id="modal1" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">이용약관</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+      <div class="modal__body">
+        <div class="modal__filter is-mo">
+          <div class="select">
+            <label for="termsDate2" class="select__label select__label--hide">개정 약관 날짜 선택</label>
+            <select id="termsDate2" class="select__field">
+              <option value="">2013.11.08_개정</option>
+              <option value="">옵션2</option>
+              <option value="">옵션3</option>
+            </select>
+          </div>
+        </div>
+        <div class="content">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus nobis id praesentium rem quisquam deleniti beatae. Odio iusto ab voluptate quis, porro unde amet est obcaecati laboriosam quidem modi similique, officiis nulla perferendis aperiam, officia fugit ducimus commodi labore. Odio tempora, quis repudiandae consequuntur ipsam inventore eum assumenda perspiciatis vel soluta rem ab porro in iure dolor nihil cupiditate esse? Voluptatem iure fugit hic nesciunt quibusdam in, recusandae aliquam, eaque deserunt incidunt molestias laborum, non consectetur suscipit dolor quia consequuntur sed quod est. Tempore libero eum, deleniti itaque pariatur voluptas architecto officiis eius magni non nesciunt ea harum earum, officia dicta optio nulla nostrum tenetur! Ratione molestias eius optio aliquam totam laboriosam impedit quae sit consectetur, consequatur in deleniti quaerat amet tempore iusto veritatis illum recusandae. Explicabo minima adipisci animi, ex illo sed voluptatibus sunt ut itaque, provident non! Quasi cum voluptate rerum dignissimos, necessitatibus consequatur quam magnam debitis sed distinctio doloremque quaerat deleniti illum amet? Cupiditate dignissimos itaque laudantium aliquam sint ratione et non repellat distinctio perferendis, velit assumenda, reiciendis dicta, aspernatur officia nemo sed illo iste repudiandae amet quos? Libero iure ea nostrum quibusdam ipsum minima, dicta corrupti sapiente nemo laborum cumque adipisci mollitia ut. Praesentium, fuga! Earum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- bottom sheet -->
+  <div class="bottom-sheet" id="filterSheet">
+    <!-- dim -->
+    <div class="bottom-sheet__dim"></div>
+    <!-- content -->
+    <div class="bottom-sheet__content">
+      <div class="bottom-sheet__indicator"></div>
+      <div class="bottom-sheet__header">
+        <h3 class="bottom-sheet__title">조회 설정</h3>
+      </div>
+      <div class="bottom-sheet__body">
+        <div class="bottom-sheet__section">
+          <h4 class="bottom-sheet__subtitle">주문유형</h4>
+          <div class="radio-group radio-group--col5">
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio19" name="order-type" class="radio-btn__input" checked />
+              <label for="radio19" class="radio-btn__label">주문접수</label>
+            </div>
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio20" name="order-type" class="radio-btn__input" />
+              <label for="radio20" class="radio-btn__label">결제완료</label>
+            </div>
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio21" name="order-type" class="radio-btn__input" />
+              <label for="radio21" class="radio-btn__label">상품준비</label>
+            </div>
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio22" name="order-type" class="radio-btn__input" />
+              <label for="radio22" class="radio-btn__label">출고완료</label>
+            </div>
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio23" name="order-type" class="radio-btn__input" />
+              <label for="radio23" class="radio-btn__label">배송완료</label>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-sheet__section">
+          <h4 class="bottom-sheet__subtitle">조회기간</h4>
+          <div class="radio-group radio-group--col4 mb12">
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio24" name="order-period" class="radio-btn__input" />
+              <label for="radio24" class="radio-btn__label">1개월</label>
+            </div>
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio25" name="order-period" class="radio-btn__input" checked />
+              <label for="radio25" class="radio-btn__label">3개월</label>
+            </div>  
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio26" name="order-period" class="radio-btn__input" />
+              <label for="radio26" class="radio-btn__label">6개월</label>
+            </div>  
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio27" name="order-period" class="radio-btn__input" />
+              <label for="radio27" class="radio-btn__label">직접입력</label>
+            </div>
+          </div>
+          <!-- 기간 직접 입력 -->
+          <div class="date-range">
+            <div class="date-range__item">
+              <div class="form__field form__field--calendar">
+                <div class="form__control">
+                  <input
+                    type="text"
+                    id="startDate"
+                    class="form__input js-datepicker"
+                    placeholder="YYYY.MM.DD"
+                    inputmode="numeric"
+                    autocomplete="off"
+                  />
+                  <button
+                    type="button"
+                    class="form__icon"
+                    aria-label="시작일 달력 열기"
+                  ></button>
+                </div>
+              </div>
+            </div>
+
+            <span class="date-range__dash" aria-hidden="true">~</span>
+
+            <div class="date-range__item">
+              <div class="form__field form__field--calendar">
+                <div class="form__control">
+                  <input
+                    type="text"
+                    id="endDate"
+                    class="form__input js-datepicker"
+                    placeholder="YYYY.MM.DD"
+                    inputmode="numeric"
+                    autocomplete="off"
+                  />
+                  <button
+                    type="button"
+                    class="form__icon"
+                    aria-label="종료일 달력 열기"
+                  ></button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="bottom-sheet__footer">
+        <button type="button" class="btn btn--primary btn--block btn--cut-conners">조회</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- alert -->
+  <div id="confirmPurchaseAlert" class="alert">
+    <div class="alert__dim"></div>
+    <div class="alert__content">
+      <div class="alert__body">
+        <p class="alert__text">구매 확정 후 해당 상품은 <br />반품 및 환불이 불가합니다! <br />구매확정하시겠습니까?</p>
+      </div>
+      <div class="alert__footer">
+        <button class="btn btn--line js-alert-cancel">취소</button>
+        <button class="btn btn--primary js-alert-confirm">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../assets/js/ui.js"></script>
+</body>
+</html>

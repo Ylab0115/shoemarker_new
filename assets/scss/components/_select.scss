@@ -1,0 +1,91 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.select {
+  position: relative;
+  @include flex-col;
+  gap: 4px;
+  &.is-required {
+    .select__label {
+      &::after {
+        content: '*';
+        color: $red;
+        padding: 0 4px;
+      }
+    }
+  }
+  &__field {
+    width: 100%;
+    appearance: none;
+    padding: 14px 32px 14px 12px;
+    border: 1px solid $gray-30;
+    background-color: $white;
+    color: $gray-70;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    outline: none;
+    &:invalid {
+      color: $gray-70;
+    }
+  }
+  &__label {
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    &--hide {
+      overflow: hidden;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      clip: rect(1px, 1px, 1px, 1px);
+    }
+  }
+  &__box {
+    position: relative;
+    & + .select__box {
+      margin-top: 4px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      @include bgimage('icon_chevron_down_20','svg');
+      background-size: cover;
+    }
+    &:focus-within::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+} 
+// 생년월일
+.date-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  .select {
+    &__box {
+      &::after {
+        right: 8px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &__field {
+      padding: 4px 8px;
+    }
+  }
+  &__year {
+    min-width: 70px;
+  }
+  &__month,
+  &__day {
+    min-width: 52px;
+  }
+}

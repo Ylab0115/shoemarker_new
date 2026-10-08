@@ -1,0 +1,53 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: $gray-10;
+  &__icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    &--free-shipping {
+      @include bgimage('icon_free_shipping', 'svg');
+    }
+    &--free-shipping-b {
+      @include bgimage('icon_free_shipping_b', 'svg');
+    }
+    &--plus {
+      @include bgimage('icon_plus_one', 'svg');
+    }
+    &--pickup {
+      @include bgimage('icon_store_pickup', 'svg');
+    }
+    &--giftcard {
+      @include bgimage('icon_giftcard', 'svg');
+    }
+    &--installment {
+      @include bgimage('icon_installment', 'svg');
+    }
+    &--coupon {
+      @include bgimage('icon_coupon', 'svg');
+    }
+    &--coupon-excluded {
+      @include bgimage('icon_coupon_excluded', 'svg');
+    }
+  }
+  &__text {
+    color: $gray-80;
+    font-size: 13px;
+    line-height: 140%;
+    letter-spacing: -0.13px;
+  }
+  &--dark {
+    background: $black;
+    .chip__text {
+      color: $white;
+    }
+  }
+}

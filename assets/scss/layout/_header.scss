@@ -1,0 +1,826 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  &::before {
+    @include before_after;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $black, $alpha: 0.92);
+    transition: opacity .25s ease;
+  }
+  &.scrolled {
+    &::before {
+      background-color: rgba($color: $black, $alpha: 0.92);
+    }
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);  
+  }
+  @include tablet {
+    position: relative;
+    height: auto;
+  }
+  &__inner {
+    @include flex-col;
+    gap: 24px;
+    max-width: 1800px;
+    width: 100%;
+    height: 100%;
+    padding: 30px 40px;
+    margin: 0 auto;
+    @media (max-width: 1440px) {
+      padding: 30px 24px;
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+  /*&__top-area {
+    
+  }*/
+  &__bottom-area {
+    .header__util {
+      &-wrap {
+        display: flex;
+        align-items: flex-end;
+        gap: 24px;
+        @include tablet {
+          gap: 16px;
+        }
+      }
+      @include tablet {
+        .chatGPT {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 84px;
+          height: 34px;
+          @include bgimage('icon_chatGPT', 'svg');
+        }
+      }
+    }
+    @include flex(flex-end, space-between);
+    flex-direction: row-reverse;
+    @include tablet {
+      @include flex-col;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+      .header__util {
+        @include flex(center, space-between);
+        padding: 0 16px;
+      }
+      .header__util,
+      .header__nav {
+        width: 100%;
+      }
+    }
+  }
+  &__logo-wrap {
+    position: relative;
+    @include flex(flex-start, space-between);
+    .header__logo-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        width: 88px;
+        height: 88px;
+        background-color: $black;
+        padding-top: 20px;
+      }
+      .search-input {
+        margin-left: 32px;
+      }
+      .form__search {
+        border: 0;
+        .form__field {
+          width: 228px;
+        }
+      }
+    }
+    .member__link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      .member__item {
+        color: $gray-45;
+        font-size: 12px;
+      }
+      &-divider {
+        width: 1px;
+        height: 12px;
+        background-color: $gray-75;
+      }
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+  &__logo {
+    width: 200px;
+    height: 30px;
+    text-indent: -9999px;
+    @include bgimage('logo_header_pc', 'svg');
+    background-size: 100% auto;
+    @include tablet {
+      width: 56px;
+      height: 32px;
+      @include bgimage('logo_header_mo', 'svg');
+      background-position: 50% 50%;
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    @include desktop {
+      gap: 24px;
+    }
+    @media (max-width: 1160px) {
+      gap: 16px;
+    }
+    @include tablet {
+      width: 100%;
+      overflow-x: auto;
+      gap: 0;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
+    
+  &--dark {
+    background-color: transparent;
+    border-bottom-color: transparent;
+    &.scrolled {
+      background-color: rgba($color: $black, $alpha: 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);      
+    }
+    .header__logo {
+      @include bgimage('logo_w', 'svg');
+      background-size: 100% auto;
+    }
+    .brand-dropdown {
+      &__toggle-icon {
+        @include bgimage('icon_chevron_down_24_w', 'svg');
+        @include tablet {
+          width: 18px;
+          height: 18px;
+          background-size: cover;
+        }
+      }
+    }
+    .nav__link {
+      color: $white;
+      &.is-open,
+      &:hover {
+        &::after {
+          background-color: $white;
+        }
+      }    
+    }
+    .nav__bg {
+      background: rgba($color: #000000, $alpha: 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .nav__depth2 {
+      > li {
+        > a {
+          color: $white;
+        }
+      }
+    }
+    .nav__depth3 {
+      > li {
+        > a {
+          color: $white;
+        }
+      }
+    }
+    .nav--etc {
+      .nav__link {
+        color: $white;
+      }
+      &::before {
+        color: $white;
+      }
+    }
+    .util {
+      &__item {
+        &--login {
+          @include bgimage('icon_login_w', 'svg'); 
+        }
+        &--logout {
+          @include bgimage('icon_login_w', 'svg');
+          transform: rotate(180deg);
+        }
+        &--search {
+          @include bgimage('icon_search_w', 'svg'); 
+        }
+        &--cart {
+          @include bgimage('icon_cart_w', 'svg'); 
+        }
+        &--mypage {
+          @include bgimage('icon_mypage_w', 'svg'); 
+        }
+        &--mypage {
+          @include bgimage('icon_wishlist_w', 'svg'); 
+        }
+      }
+      &__badge {
+        background-color: $white;
+        color: $black;
+      }
+    }
+  }
+  // 메인
+  &--main {
+    @include tablet {
+      display: block;
+      position: fixed;
+      transform: translateY(0);
+      transition: transform 0.3s ease;
+    }
+    .header__inner {
+      @include tablet {
+        @include flex(flex-start, space-between);
+        flex-direction: row;
+        gap: 6px;
+        padding: 18px 0 0 16px;
+        &::before {
+          @include before_after;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 58px;
+          background-color: $white;
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  flex-shrink: 0;
+  &__link {
+    display: block; 
+    width: 100%;
+    height: 100%;
+  }
+  &__img {
+    height: 30px;
+    @include tablet {
+      height: 24px;
+    }
+  }
+}
+.brand-dropdown {
+  position: relative;
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    @include tablet {
+      width: 18px;
+      height: 18px;
+    }
+    &[aria-expanded="true"]{
+      .brand-dropdown__toggle-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &__toggle-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    @include bgimage('icon_chevron_down_24_w', 'svg');
+    transition: transform .3s ease;
+    @include tablet {
+      width: 18px;
+      height: 18px;
+      background-size: cover;
+    }
+  }
+  &__layer {
+    position: absolute;
+    top: calc(100% + 20px);
+    right: 0;
+    width: 174px;
+    padding: 12px;
+    border: 1px solid $gray-80;
+    background: $white;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+    opacity .2s ease,
+    transform .2s ease;
+    z-index: 1;
+    &.no-transition {
+      transition: none !important;
+    }
+    &.is-active {
+      opacity: 1 !important;
+      pointer-events: auto;
+      transform: translateY(0);
+
+      @include tablet {
+        pointer-events: auto;
+        transform: translateY(0);
+        transition: transform .4s cubic-bezier(0.76, 0, 0.24, 1);
+      } 
+    }
+    @include tablet {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 24px 32px;
+      border: 0;
+      background: rgba($color: $black, $alpha: 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 1;
+      opacity: 1;
+      pointer-events: none;
+      transform: translateY(-100%);
+      transition:
+        visibility .4s,
+        transform .4s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+  }
+  &__content {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+  &__list {
+    @include flex-col;
+    gap: 12px;
+    @include tablet {
+      gap: 16px;
+    }
+  }
+  &__item {
+    height: 21px;
+    @include tablet {
+      height: auto;
+    }
+  }
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    @include tablet {
+      @include flex(center, space-between);
+      padding: 17px 16px 17px 24px;
+      background: $white;
+    }
+    &::after {
+      content: '';
+      display: none;
+      width: 24px;
+      height: 24px;
+      @include bgimage('icon_chevron_right_24', 'svg');
+      @include tablet {
+        display: block;
+      }
+    }
+    img {
+      @include tablet {
+        height: 21px;
+      }
+    }
+  }
+  &__close {
+    display: none;
+    @include tablet {
+      align-self: flex-end;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      padding: 0;
+    }
+  }
+  &__close-text {
+    color: $white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.84px;
+  }
+  &__close-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    @include bgimage('icon_delete_20_w', 'svg');
+  }
+}
+@keyframes layer-open {
+  0% { 
+    transform: translateY(-100%);
+  }
+  100% { 
+    transform: translateY(0);
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  @include desktop {
+    gap: 24px;
+  }
+  @media (max-width: 1160px) {
+    gap: 16px; 
+  }
+  @include tablet {
+    display: flex;
+    /*overflow-x: auto;*/
+    -webkit-overflow-scrolling: touch;
+    width: max-content;
+    white-space: nowrap;
+    padding: 0 24px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__item {
+    @include flex;
+    flex-shrink: 0;
+    &.is-open {
+      .nav__content {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        // transition: opacity .25s ease, visibility .25s ease;
+      }
+    }
+    &-all {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+  &__link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: $gray-0;
+    font-family: $font-en;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+    &.is-open,
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $gray-0;
+      }
+    }
+    @include tablet {
+      font-weight: 500;
+      line-height: 34px;
+    }
+    &.nav__link-all {
+      width: 24px;
+      height: 24px;
+      @include bgimage('icon-all-menu', 'svg')
+    }
+  }
+  // gnb 2depth 전체 메뉴
+  &__bg {
+    position: absolute;
+    top: $page-top-margin;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: $white;
+    z-index: 1;
+    @include tablet {
+      display: none;
+    }
+    @media (max-width: 1440px) {
+      top: 148px;
+    }
+    // &.is-open {
+    //   transition: height .25s ease;
+    // }
+  }
+  &__content {
+    position: absolute;
+    left: 50%;
+    top: $page-top-margin;
+    transform: translateX(-50%);
+    max-width: $max-width;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+    @media (max-width: 1440px) {
+      top: 148px;
+    }
+    @include tablet {
+      display: none;
+    }
+    &--brand {
+      padding: 40px 0;
+    }
+  }
+  &__title {
+    margin-bottom: 18px;
+    color: $gray-80;
+    font-family: $font-en;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 150%;
+    text-align: center;
+  }
+  &__list {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    padding: 40px 40px;
+    margin: 0 auto;
+    @media (max-width: 1440px) {
+      padding: 24px;
+    }
+  }
+  &__depth2 {
+    @include flex-col;
+    gap: 24px;
+    flex-shrink: 0;
+    min-height: 234px;
+    border-right: 1px solid $gray-30;
+    > li {
+      > a {
+        position: relative;
+        display: block;
+        width: 120px;
+        padding-right: 50px;
+        color: $gray-60;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 26px;
+        &.is-active,
+        &:hover {
+          color: $gray-80;
+          font-weight: 600;
+          &::after {
+            content: '';
+            position: absolute;
+            right: -1px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: $gray-80;
+          }
+        }
+      }
+    }
+  }
+  &__depth3-wrap {
+    padding-left: 80px;
+    flex: 1;
+  }
+  &__depth3 {
+    display: none;
+    gap: 32px;
+    min-width: 100px;
+    &.is-active {
+      display: flex;
+    }
+    > li {
+      > a {
+        display: block;
+        color: $black;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        &:hover {
+          text-decoration: underline;
+          text-underline-position: from-font;
+        }
+      }
+    }
+  }
+  &__depth4 {
+    @include flex-col;
+    gap: 10px;
+    margin-top: 10px;
+    > li {
+      > a {
+        display: block;
+        color: $gray-70;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;        
+        &:hover {
+          text-decoration: underline;
+          text-underline-position: from-font;
+        }
+      }
+    }
+  }
+  &__brand {
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 32px 16px;
+    width: 940px;
+    max-height: 532px;
+    margin: 0 auto;
+    &::-webkit-scrollbar {
+      height: 2px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #ccc;
+    }
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+  }
+  &__brand-link {
+    @include flex-col;
+    gap: 4px;
+  }
+  &__brand-img {
+    overflow: hidden;
+    width: 100%;
+    height: 80px;
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  &__brand-name {
+    color: $gray-80;
+    font-family: $font-en;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  &--etc {
+    position: relative;
+    &::before {
+      @include before_after;
+      width: 1px;
+      height: 24px;
+      background-color: $gray-40;
+      flex-shrink: 0;
+      @include desktop {
+        height: 20px;
+      }
+      @include tablet {
+        /*display: none;*/
+      }
+    }
+    @include tablet {
+      padding-left: 0;
+      /*display: none;*/
+    }
+    .nav__link {
+      color: $gray-0;
+      font-family: $font-base;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 150%;
+    }
+  }
+}
+
+.util {
+  position: relative;
+  &__item {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    @include flex;
+    &--login {
+      @include bgimage('icon_login', 'svg');
+    }
+    &--logout {
+      @include bgimage('icon_logout', 'svg');
+    }
+    &--search {
+      @include bgimage('icon_search', 'svg');
+    }
+    &--cart {
+      @include bgimage('icon_cart', 'svg');
+    }
+    &--mypage {
+      @include bgimage('icon_mypage', 'svg');
+    }
+    &--wish {
+      @include bgimage('icon_wishlist', 'svg');
+    }
+  }
+  &__badge {
+    position: absolute;
+    top: 7px;
+    right: 2px;
+    width: 14px;
+    height: 14px;
+    background-color: #2D2D2D;
+    border-radius: 50%;
+    color: $white;
+    font-family: $font-en;
+    font-size: 9px;
+    font-weight: 600;
+    text-align: center;
+    z-index: 1;
+  }
+  .is-pc {
+    @include tablet {
+      display: none;
+    }
+    .util {
+      &__item {
+        width: 24px;
+        height: 24px;
+        &--login {
+          @include bgimage('icon_login_pc', 'svg'); 
+        }
+        &--logout {
+          @include bgimage('icon_logout_pc', 'svg');
+        }
+        &--search {
+          @include bgimage('icon_search_pc', 'svg'); 
+        }
+        &--cart {
+          @include bgimage('icon_cart_pc', 'svg'); 
+        }
+        &--mypage {
+          @include bgimage('icon_mypage_pc', 'svg'); 
+        }
+        &--wish {
+          @include bgimage('icon_wishlist_pc', 'svg'); 
+        }
+      }
+      &__badge {
+        top: -2PX;
+        right: 45%;
+        transform: translateX(50%);
+        background-color: transparent;
+        color: $white;
+      }
+    }
+    .recently-viewed {
+      position: relative;
+      width: 32px;
+      height: 32px;
+      .util__badge {
+        top: -9px;
+        right: -9px;
+        transform: none;
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+        line-height: 18px;
+        background-color: #f92424;
+      }
+    }
+  }
+  .is-mo {
+    display: none;
+    @include tablet {
+      display: flex;
+    }
+  }
+}

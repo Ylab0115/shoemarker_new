@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.min.css">
+  <!-- Style Add -->
+  <link rel="stylesheet" href="../../assets/css/style-add.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container page-mypage has-lnb">
+
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <section class="section">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">SNS 계정 연동</h2>
+          </div>
+
+          <div class="social-connect">
+            <div class="sns-list">
+              <div class="sns-list__item">
+                <span class="sns-list__icon sns-list__icon--naver"></span>
+                <button type="button" class="btn btn--md btn--line btn--secondary">연결하기</button>
+              </div>
+              <!-- 연결된 sns 계정에 is-linked 클래스 추가 -->
+              <div class="sns-list__item is-linked">
+                <span class="sns-list__icon sns-list__icon--kakao"></span>
+                <button type="button" class="btn btn--md btn--line btn--secondary">해제하기</button>
+              </div>
+            </div>
+            <div class="notice">
+              <h3 class="notice__title">알려드립니다.</h3>
+              <ul class="list list--dot">
+                <li>SNS계정과 연동하여 간편하게 로그인 할 수 있는 서비스 입니다.</li>
+                <li>SNS계정은 중복하여 이용하실 수 없습니다.</li>
+                <li>계정 연결 해제 시는 기존 아이디와 패스워드로 로그인하여 이용할 수 있습니다.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        await Promise.all(
+          ["header", "lnb", "footer"].map(async id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const file = el.dataset.file || `${id}.html`;
+            const res = await fetch(`../include/${file}`);
+            if (!res.ok) {
+              throw new Error(`${file} 로드 실패`);
+            }
+            el.innerHTML = await res.text();
+          })
+        );
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  </script>
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    window.addEventListener('load', function () {
+      
+    });
+  </script>
+</body>
+</html>

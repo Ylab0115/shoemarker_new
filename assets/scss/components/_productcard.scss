@@ -1,0 +1,223 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+// 상품 영역 (타이틀, 스와이프)
+.product {
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  padding-top: 20px;
+  @include tablet {
+    padding-top: 0;
+  }
+  &__inner {
+    position: relative;
+    @include flex-col;
+    gap: 20px;
+    @include tablet {
+      gap: 12px;
+      padding: 24px;
+    }
+  }
+  &__head {
+    @include flex(center, space-between);
+  }
+  &__title {
+    color: $grayscale-800;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+    @include tablet {
+      color: $gray-80;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0;
+    }
+  }
+  .product-swiper {
+    &__btn {
+      font-size: 0;
+      @include tablet {
+        display: none;
+      }
+    }
+    &__prev {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-45%);
+      left: 0;
+      width: 36px;
+      height: 36px;
+      @include bgimage('icon_swiper_prev', 'svg');
+      z-index: 1;
+    }
+    &__next {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-45%);
+      right: 0;
+      width: 36px;
+      height: 36px;
+      @include bgimage('icon_swiper_next', 'svg');
+      z-index: 1;
+    }
+  }
+}
+
+// 상품 개별
+.product-card {
+  position: relative;
+  @include flex-col;
+  gap: 8px;
+  width: 100%;
+  &__link {
+    width: 100%;
+    height: 100%;
+  }
+  &__label {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    @include inline-flex;
+    padding: 4px 8px;
+    background: #F92424;
+    color: $white;
+    font-family: $font-en;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: uppercase;
+    @include tablet {
+      padding: 2px 4px;
+      font-size: 11px;
+      line-height: 12px;
+    }
+    &--rank {
+      left: 16px;
+      top: 16px;
+      padding: 8px;
+      background: $gray-80;
+      font-family: $font-base;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      @include tablet {
+        left: 8px;
+        top: 8px;
+        padding: 4px;
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 12px;
+      }
+    }
+    &--limited {
+      left: 24px;
+      top: 40px;
+      padding: 4px 12px;
+      background: linear-gradient(39deg, #005BFF 31.31%, rgba(0, 133, 255, 0.76) 65.06%, rgba(62, 228, 175, 0.51) 101.68%, #3C95FD 157.92%);
+      @include tablet {
+        left: 12px;
+        top: 10px;
+      }      
+    }
+    &.hot {
+      background: $black;
+    }
+    &--group {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      width: calc(100% - 24px);
+      @include inline-flex(center, flex-start);
+      gap: 3px;
+      flex-wrap: wrap;
+      .product-card__label {
+        position: relative;
+        top: 0;
+        left:0;
+      }
+    }
+  }
+  &__img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__info {
+    @include flex-col;
+  }
+  &__brand {
+    margin-bottom: 4px;
+    color: $gray-60;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 120%;
+  }
+  &__name {
+    @include ellipsis;
+    margin-bottom: 2px;
+    color: $gray-80;
+    font-size: 14px;
+    line-height: 120%;
+  }
+  &__price {
+    @include flex-col;
+  }
+  .price {
+    display: inline-flex;
+    align-items: center;
+  }
+  // 정가 
+  &__origin {
+    .price {
+      color: $gray-80;
+      font-size: 14px;
+      line-height: 120%;
+      &__num {
+        color: $gray-35;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: line-through;
+      }
+      &__unit {
+        color: $gray-35;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: line-through;
+      }
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+  // 금액
+  &__cost {
+    @include flex(center, flex-start);
+    gap: 2px;
+    .price {
+      @include flex(center, flex-start);
+      color: $gray-80;
+      font-size: 14px;
+      line-height: 120%;
+      &__num {
+        font-weight: 600;
+      }
+      &__unit {
+        font-weight: 600;
+      }
+    }
+  }
+  &__percent {
+    color: $red;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 120%;
+  }
+}

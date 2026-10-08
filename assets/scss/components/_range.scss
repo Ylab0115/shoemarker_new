@@ -1,0 +1,108 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.price-range-filter {
+  .price-input-container {/* 입력 박스 스타일 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    .separator {
+      font-weight: 800;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      width: calc(50% - 10px);
+      label {
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+      .input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        input {
+          padding-right: 24px;
+          border: none;
+          background: $grayscale-75;
+          /* input type=number의 스핀 버튼 제거 */
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+        span {
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+  .slider-container {/* 슬라이더 스타일 */
+    position: relative;
+    height: 6px;
+    background: $gray-20;
+    margin: 24px 10px;
+    .slider-track {
+      position: absolute;
+      height: 100%;
+      background-color: $gray-90;
+    }
+    .range-input {
+      position: relative;
+      input {
+        position: absolute;
+        top: 0px;
+        height: 6px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background: none;
+        pointer-events: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        &.min {
+          left: 0;
+        }
+        &.max {
+          right: 0;
+        }
+        /* 슬라이더 손잡이(Thumb) 스타일 */
+        &::-webkit-slider-thumb {
+          height: 24px;
+          width: 24px;
+          border-radius: 50%;
+          background: $gray-0;
+          border: 2px solid $gray-90;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+          pointer-events: auto;
+          -webkit-appearance: none;
+          cursor: pointer;
+        }
+        &::-moz-range-thumb {
+          height: 24px;
+          width: 24px;
+          border-radius: 50%;
+          background: $gray-0;
+          border: 2px solid $gray-90;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+          pointer-events: auto;
+          -moz-appearance: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .preset-buttons {/* 버튼 스타일 */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    button {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+/*******************************************
+*    VARIABLES
+********************************************/
+
+/* font */
+$font-base: "Pretendard", sans-serif;
+$font-noto: 'Noto Sans KR', sans-serif;
+$font-en: "WorkSans", sans-serif;
+
+/* breakpoints */
+$breakpoints: (
+  "xs": 280px,
+  "sm": 375px,
+  "ms": 640px, //mobile[S]
+  "md": 768px, //mobile
+  "lg": 1024px, //tablet
+  "xl": 1280px
+);
+
+/* 페이지 상단 여백(상단 여백 및 sticky TOP 값 */
+$page-top-margin: 160px;
+$page-top-margin-space: $page-top-margin + 25px;
+
+/* MAX WIDTH */
+$max-width: 1800px;
+
+/* colors */
+$black: #000000;
+$white: #FFFFFF;
+$red: #FE4C58;
+$green: #00883E;
+$blue: #246BEB;
+$success: #008A1E;
+$muted: #767676;
+
+
+/* gray scale */
+$gray-0: #FFFFFF;
+$gray-5: #F8F8F8;
+$gray-10: #F0F0F0;
+$gray-20: #E4E4E4;
+$gray-25: #E0E0E0;
+$gray-30: #D8D8D8;
+$gray-35: #CCCCCC;
+$gray-40: #C6C6C6;
+$gray-45: #B7B7B7;
+$gray-50: #8E8E8E;
+$gray-60: #717171;
+$gray-70: #555555;
+$gray-75: #333333;
+$gray-80: #2D2D2D;
+$gray-90: #1D1D1D;
+
+$grayscale-50: #FAFAFA;
+$grayscale-75: #F5F5F5;
+$grayscale-100: #EAEAEA;
+$grayscale-200: #CCCCCC;
+$grayscale-400: #999999;
+$grayscale-500: #808080;
+$grayscale-600: #666666;
+$grayscale-700: #4D4D4D;
+$grayscale-800: #333333;
+$grayscale-900: #1A1A1A;
