@@ -471,9 +471,9 @@ let UI = {
       });
     });
   },
-  // 기획전 상세페이지 탭 메뉴 활성화/비활성화
+  // 기획전, 나도MD 상세페이지 탭 메뉴 활성화/비활성화
   promoTabs: function () {
-    const $promoTabs = $('.promo-prod');
+    const $promoTabs = $('.promo-prod, .mymd-prod');
 
     if (!$promoTabs.length) return;
 

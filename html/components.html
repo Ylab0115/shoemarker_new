@@ -6,10 +6,11 @@
   <meta name="format-detection" content="telephone=no">
   <title>슈마커</title>
 
-  <link rel="stylesheet" href="../assets/css/style.min.css">
   <!-- Library -->
   <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  
+  <link rel="stylesheet" href="../assets/css/style.min.css">
   <style>
     /* Guide style */
     *, ::before, ::after {box-sizing:border-box;}
@@ -360,6 +361,23 @@
                     </button>
                   </td>
                 </tr>
+                <tr>
+                  <th>좋아요</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--wish" aria-label="좋아요">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                    <button type="button" class="btn-icon btn-icon--wish is-active" aria-label="좋아요">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <th>텍스트 버튼 형태</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--cutconners" aria-label="BEST">
+                      BEST
+                    </button>
+                  </td>
+                </tr>
               </tbody>
             </table>
 
@@ -409,8 +427,13 @@
                       <span class="btn-filter__icon" aria-hidden="true"></span>
                     </button>
                   </td>
-                  <th></th>
-                  <td></td>
+                  <th>테그</th>
+                  <td>
+                    <div class="btn-icon--tag">
+                      <span class="btn-icon__icon"></span>
+                      456명이 태그 정보를 저장하였습니다.
+                    </div>
+                  </td>
                 </tr>
               </tbody>
             </table>
