@@ -4970,7 +4970,7 @@
         }
       }
       // 스와이프 작동하기
-      // 모바일용 텍스트 흐름을 위해 텍스트 요소 복제하기
+      // 텍스트 흐름을 위해 텍스트 요소 복제하기
       document.querySelectorAll('.hero-swiper__flow-txt-box').forEach((box) => {
         // 중복 생성 방지
         if (box.querySelector('.hero-swiper__flow-txt-track')) return;
@@ -4990,9 +4990,7 @@
           track.appendChild(clone);
         }
       });
-      const progressBar = document.querySelector(
-        '.hero-swiper__progress-bar'
-      );
+      const progressBar = document.querySelector('.hero-swiper__progress-bar');
       
       // 슬라이드가 2-4개일경우 복제하기
       const heroSwiperEl = document.querySelector('.js-hero-swiper');
@@ -5056,10 +5054,7 @@
       });
 
       // 핫이슈 스크립트
-      const hotissueList = document.querySelector(
-        '.main .section--hotissue .hotissue__list'
-      );
-
+      const hotissueList = document.querySelector('.main .section--hotissue .hotissue__list');
       if (hotissueList) {
         const items = hotissueList.querySelectorAll('.hotissue__item');
 
@@ -5081,36 +5076,36 @@
 
       // 상품 슬라이드
       const swiperEls = document.querySelectorAll('.js-product-swiper');
-      if (!swiperEls.length) return;
+      if (swiperEls) {
+        swiperEls.forEach(function (swiperEl) {
+          let pcSlides = 6;
+          let pcGap = 8;
 
-      swiperEls.forEach(function (swiperEl) {
-        let pcSlides = 6;
-        let pcGap = 8;
+          const brandnews = swiperEl.closest('.brandnews');
 
-        const brandnews = swiperEl.closest('.brandnews');
+          // 클래스별 설정
+          if (brandnews) {
+            pcSlides = 4;
+          }
 
-        // 클래스별 설정
-        if (brandnews) {
-          pcSlides = 4;
-        }
-
-        // 기본 옵션
-        const options = {
-          slidesPerView: pcSlides,
-          spaceBetween: pcGap,
-          freeMode: false,
-        };
-
-        // brandnews에만 진행바 추가
-        if (brandnews) {
-          options.pagination = {
-            el: brandnews.querySelector('.swiper-pagination'),
-            clickable: true,
+          // 기본 옵션
+          const options = {
+            slidesPerView: pcSlides,
+            spaceBetween: pcGap,
+            freeMode: false,
           };
-        }
 
-        new Swiper(swiperEl, options);
-      });
+          // brandnews에만 진행바 추가
+          if (brandnews) {
+            options.pagination = {
+              el: brandnews.querySelector('.swiper-pagination'),
+              clickable: true,
+            };
+          }
+
+          new Swiper(swiperEl, options);
+        });
+      }
 
       // 카테고리 베스트 슬라이드
       const bestHotEl = document.querySelector('.category-best__slider');
@@ -5155,43 +5150,43 @@
 
       // 슈마커 쇼츠 리스트 슬라이드
       const shotsEls = document.querySelectorAll('.js-shots-swiper');
-      if (!shotsEls.length) return;
-
-      shotsEls.forEach(function (swiperEl) {
-        new Swiper(swiperEl, {
-          direction: 'vertical',
-          loop: false,
-          spaceBetween: 8,
-          slidesPerView: 'auto',
-          //autoplay: {
-          //  delay: 2500,
-          //  disableOnInteraction: false,
-          //},
+      if (shotsEls){
+        shotsEls.forEach(function (swiperEl) {
+          new Swiper(swiperEl, {
+            direction: 'vertical',
+            loop: false,
+            spaceBetween: 8,
+            slidesPerView: 'auto',
+            //autoplay: {
+            //  delay: 2500,
+            //  disableOnInteraction: false,
+            //},
+          });
         });
-      });
 
-      const hoverSelector = '.section--shots .shots__products .shots-card';
+        const hoverSelector = '.section--shots .shots__products .shots-card';
 
-      $(document).on('mouseenter', hoverSelector, function () {
-        const video = this.querySelector('video');
-        if (!video) return;
+        $(document).on('mouseenter', hoverSelector, function () {
+          const video = this.querySelector('video');
+          if (!video) return;
 
-        video.muted = true;
+          video.muted = true;
 
-        video.play().catch((error) => {
-          if (error.name !== 'AbortError') {
-            console.error('영상 재생 실패:', error);
-          }
+          video.play().catch((error) => {
+            if (error.name !== 'AbortError') {
+              console.error('영상 재생 실패:', error);
+            }
+          });
         });
-      });
 
-      $(document).on('mouseleave', hoverSelector, function () {
-        const video = this.querySelector('video');
-        if (!video) return;
+        $(document).on('mouseleave', hoverSelector, function () {
+          const video = this.querySelector('video');
+          if (!video) return;
 
-        video.pause();
-        video.load();
-      });
+          video.pause();
+          video.load();
+        });
+      }
 
       // 새롭게 만나는 단독 혜택 슬라이드
       const exclusiveOfferEls = document.querySelectorAll('.js-exclusive-offer-swiper');
@@ -5255,7 +5250,6 @@
           loop: realCount > 1,
           centeredSlides: true,
           slidesPerView: 'auto',
-          spaceBetween: 40,
           speed: 700,
           grabCursor: true,
 
@@ -5267,13 +5261,13 @@
             modifier: 1,
             slideShadows: false,
           },
-          autoplay:
+          /*autoplay:
             realCount > 1
               ? {
                   delay: 4000,
                   disableOnInteraction: false,
                 }
-              : false,
+              : false,*/
           on: {
             init: function () {
               updatePagination(this);
@@ -5285,81 +5279,80 @@
           },
           breakpoints: {
             0: {
-              coverflowEffect: {
-                stretch: '5%',
-              },
+              spaceBetween: 8,
             },
             640: {
-              coverflowEffect: {
-                stretch: '-1.5%',
-              },
+              spaceBetween: 24,
+            },
+            980: {
+              spaceBetween: 48,
             },
           },
         });
       });
 
       // 슈마커 인기 랭킹 슬라이드
-      /*const popularRankEls = document.querySelectorAll('.js-popular-ranking-swiper');
-      if (!popularRankEls.length) return;
+      const popularRankEls = document.querySelectorAll('.js-popular-ranking-swiper');
+      if (popularRankEls) {
+        popularRankEls.forEach(function (swiperEl) {
+          let swiper = null;
+          let currentMode = null;
+          function initSwiper() {
+            const mode = window.innerWidth >= 768 ? 'pc' : 'mobile';
 
-      popularRankEls.forEach(function (swiperEl) {
-        let swiper = null;
-        let currentMode = null;
-        function initSwiper() {
-          const mode = window.innerWidth >= 768 ? 'pc' : 'mobile';
+            // breakpoint가 바뀌지 않았으면 재생성하지 않음
+            if (currentMode === mode) return;
 
-          // breakpoint가 바뀌지 않았으면 재생성하지 않음
-          if (currentMode === mode) return;
+            currentMode = mode;
 
-          currentMode = mode;
+            // 기존 Swiper 제거
+            if (swiper) {
+              swiper.destroy(true, true);
+            }
 
-          // 기존 Swiper 제거
-          if (swiper) {
-            swiper.destroy(true, true);
+            // 새로 생성
+            swiper = new Swiper(swiperEl, {
+              slidesPerView: mode === 'pc' ? 2 : 1,
+              grid: {
+                rows: 4,
+                fill: 'column',
+              },
+              spaceBetween: 16,
+              slidesPerGroup: 1,
+              centeredSlides: false,
+              freeMode: false,
+            });
           }
 
-          // 새로 생성
-          swiper = new Swiper(swiperEl, {
-            slidesPerView: mode === 'pc' ? 2 : 1,
-            grid: {
-              rows: 4,
-              fill: 'column',
-            },
-            spaceBetween: 16,
-            slidesPerGroup: 1,
-            centeredSlides: false,
-            freeMode: false,
-          });
-        }
+          initSwiper();
 
-        initSwiper();
-
-        window.addEventListener('resize', initSwiper);
-      });*/
+          window.addEventListener('resize', initSwiper);
+        });
+      }
 
       // LOOK BOOK 슬라이드
       const lookbookEls = document.querySelectorAll('.js-lookbook-swiper');
-      if (!lookbookEls.length) return;
+      if (lookbookEls) {
+        lookbookEls.forEach(function (swiperEl) {
+          const lookbook = swiperEl.closest('.lookbook');
+          if (!lookbook) return;
 
-      lookbookEls.forEach(function (swiperEl) {
-        const lookbook = swiperEl.closest('.lookbook');
-        if (!lookbook) return;
+          const paginationEl = lookbook.querySelector('.lookbook-pagination');
 
-        const paginationEl = lookbook.querySelector('.lookbook-pagination');
-
-        new Swiper(swiperEl, {
-          spaceBetween: 16,
-          slidesPerView: 1,
-          //autoplay: {
-          //  delay: 6000,
-          //  disableOnInteraction: false,
-          //},
-          pagination: {
-            el: paginationEl,
-            clickable: true,
-          },
+          new Swiper(swiperEl, {
+            spaceBetween: 16,
+            slidesPerView: 1,
+            //autoplay: {
+            //  delay: 6000,
+            //  disableOnInteraction: false,
+            //},
+            pagination: {
+              el: paginationEl,
+              clickable: true,
+            },
+          });
         });
-      });
+      }
     });
   </script>
 </body>

@@ -2024,9 +2024,7 @@
           track.appendChild(clone);
         }
       });
-      const progressBar = document.querySelector(
-        '.hero-swiper__progress-bar'
-      );
+      const progressBar = document.querySelector('.hero-swiper__progress-bar');
       const thumbSwiper = new Swiper('.js-hero-swiper', {
         loop: true,
         spaceBetween: 0,
@@ -2068,58 +2066,58 @@
 
       // 상품 슬라이드
       const swiperEls = document.querySelectorAll('.js-product-swiper');
-      if (!swiperEls.length) return;
+      if (swiperEls) {
+        swiperEls.forEach(function (swiperEl) {
+          const isShots = !!swiperEl.closest('.shots');
+          
+          let mobileSlides = 2.25;
+          let mobileGap = 8;
+          let pcSlides = 4;
+          let pcGap = 16;
 
-      swiperEls.forEach(function (swiperEl) {
-        const isShots = !!swiperEl.closest('.shots');
-        
-        let mobileSlides = 2.25;
-        let mobileGap = 8;
-        let pcSlides = 4;
-        let pcGap = 16;
+          // 클래스별 설정
+          if (swiperEl.closest('.redefinition')) {
+            mobileSlides = 1.27;
+            mobileGap = 16;
+            pcSlides = 2;
+          } else if (swiperEl.closest('.shots')) {
+            mobileSlides = 1.27;
+            mobileGap = 16;
+            pcSlides = 1.27;
+          } else if (swiperEl.closest('.brandnews')) {
+            mobileSlides = 3.25;
+          }
 
-        // 클래스별 설정
-        if (swiperEl.closest('.redefinition')) {
-          mobileSlides = 1.27;
-          mobileGap = 16;
-          pcSlides = 2;
-        } else if (swiperEl.closest('.shots')) {
-          mobileSlides = 1.27;
-          mobileGap = 16;
-          pcSlides = 1.27;
-        } else if (swiperEl.closest('.brandnews')) {
-          mobileSlides = 3.25;
-        }
-
-        const options = {
-          breakpoints: {
-            0: {
-              slidesPerView: mobileSlides,
-              spaceBetween: mobileGap,
-              freeMode: true,
-            },
-            1024: {
-              slidesPerView: pcSlides,
-              spaceBetween: pcGap,
-              freeMode: false,
-            },
-          },
-        };
-
-        // .shots에만 영상 재생 이벤트 적용
-        if (isShots) {
-          options.on = {
-            init: function () {
-              playActiveVideo(this);
-            },
-            slideChangeTransitionEnd: function () {
-              playActiveVideo(this);
+          const options = {
+            breakpoints: {
+              0: {
+                slidesPerView: mobileSlides,
+                spaceBetween: mobileGap,
+                freeMode: true,
+              },
+              1024: {
+                slidesPerView: pcSlides,
+                spaceBetween: pcGap,
+                freeMode: false,
+              },
             },
           };
-        }
 
-        new Swiper(swiperEl, options);
-      });
+          // .shots에만 영상 재생 이벤트 적용
+          if (isShots) {
+            options.on = {
+              init: function () {
+                playActiveVideo(this);
+              },
+              slideChangeTransitionEnd: function () {
+                playActiveVideo(this);
+              },
+            };
+          }
+
+          new Swiper(swiperEl, options);
+        });
+      }
 
       // 카테고리 베스트 슬라이드
       const bestHotEl = document.querySelector('.category-best__slider');
@@ -2267,7 +2265,7 @@
 
       // 슈마커 인기 랭킹 슬라이드
       const popularRankEls = document.querySelectorAll('.js-popular-ranking-swiper');
-      if (popularRankEls.length) {
+      if (popularRankEls) {
         popularRankEls.forEach(function (swiperEl) {
           let swiper = null;
           let currentMode = null;
@@ -2306,219 +2304,27 @@
 
       // LOOK BOOK 슬라이드
       const lookbookEls = document.querySelectorAll('.js-lookbook-swiper');
-      if (!lookbookEls.length) return;
+      if (lookbookEls) {
+        lookbookEls.forEach(function (swiperEl) {
+          const lookbook = swiperEl.closest('.lookbook');
+          if (!lookbook) return;
 
-      lookbookEls.forEach(function (swiperEl) {
-        const lookbook = swiperEl.closest('.lookbook');
-        if (!lookbook) return;
+          const paginationEl = lookbook.querySelector('.lookbook-pagination');
 
-        const paginationEl = lookbook.querySelector('.lookbook-pagination');
-
-        new Swiper(swiperEl, {
-          spaceBetween: 16,
-          slidesPerView: 1,
-          //autoplay: {
-          //  delay: 6000,
-          //  disableOnInteraction: false,
-          //},
-          pagination: {
-            el: paginationEl,
-            clickable: true,
-          },
-        });
-      });
-      
-      // SHOEMARKET SHOTS Ajax로 내용 불러오고 재생 및 소리제어하기
-      const modalSelector = '#shoemarkerShortsModal';
-      const modalSelectorList = '#shoemarkerShortsModal-listsheet';
-
-      let ajaxRequest = null;
-      let requestId = 0;
-
-      function updateVolumeButton($modal, video) {
-        const soundOn = !video.muted;
-
-        $modal.find('.shots-card__volumn button')
-          .toggleClass('is-active', soundOn)
-          .attr('aria-pressed', String(soundOn))
-          .attr('aria-label', soundOn ? '소리 끄기' : '소리 켜기');
-      }
-
-      function stopVideo($modal) {
-        const video = $modal.find('.shots-card__poster video')[0];
-        if (!video) return;
-
-        video.pause();
-        video.muted = true;
-      }
-
-      async function playVideo($modal, currentId) {
-        const video = $modal.find('.shots-card__poster video')[0];
-        if (!video) return;
-
-        video.playsInline = true;
-        video.muted = false;
-
-        video.addEventListener('volumechange', () => {
-          updateVolumeButton($modal, video);
-        });
-
-        updateVolumeButton($modal, video);
-
-        try {
-          await video.play();
-        } catch (error) {
-          // 닫거나 다른 요청이 시작된 경우 중단
-          if (currentId !== requestId) return;
-
-          if (error.name !== 'NotAllowedError') {
-            console.error('영상 재생 실패:', error);
-            return;
-          }
-
-          // 소리 재생이 차단되면 음소거로 재생
-          video.muted = true;
-          updateVolumeButton($modal, video);
-
-          try {
-            await video.play();
-          } catch (mutedError) {
-            if (currentId === requestId) {
-              console.error('음소거 재생 실패:', mutedError);
-            }
-          }
-        }
-      }
-
-      // AJAX 실행 — 모달 열기는 기존 공통 스크립트에서 처리 (ui.js)
-      $(document).on(
-        'click',
-        '.js-modal-open[data-target="#shoemarkerShortsModal"]',
-        function (e) {
-          e.preventDefault();
-
-          const $button = $(this);
-
-          if (!$button.closest('.swiper-slide')
-            .hasClass('swiper-slide-active')) {
-            return;
-          }
-
-          const url = $button.attr('data-url');
-          if (!url) return;
-
-          const currentId = ++requestId;
-
-          if (ajaxRequest) ajaxRequest.abort();
-
-          const $modal = $(modalSelector);
-          const $modalList = $(modalSelectorList);
-          const absolutePath = '../include/';
-          stopVideo($modal);
-
-          ajaxRequest = $.ajax({
-            url: `${absolutePath}${url}.html`,
-            type: 'GET',
-            dataType: 'html',
-
-            success: function (html) {
-              if (currentId !== requestId) return;
-
-              $modal.html(html);
-              playVideo($modal, currentId);
-
-              ajaxRequest = $.ajax({
-                url: `${absolutePath}${url}-list.html`,
-                type: 'GET',
-                dataType: 'html',
-
-                success: function (listHtml) {
-                  if (currentId !== requestId) return;
-
-                  $modalList.html(listHtml);
-                },
-
-                error: function (xhr, status, error) {
-                  if (status !== 'abort') {
-                    console.error('쇼츠 리스트 불러오기 실패:', error);
-                  }
-                },
-
-                complete: function () {
-                  if (currentId === requestId) {
-                    ajaxRequest = null;
-                  }
-                }
-              });
+          new Swiper(swiperEl, {
+            spaceBetween: 16,
+            slidesPerView: 1,
+            //autoplay: {
+            //  delay: 6000,
+            //  disableOnInteraction: false,
+            //},
+            pagination: {
+              el: paginationEl,
+              clickable: true,
             },
-
-            error: function (xhr, status, error) {
-              if (status !== 'abort') {
-                console.error('쇼츠 콘텐츠 불러오기 실패:', error);
-              }
-
-              if (currentId === requestId) {
-                ajaxRequest = null;
-              }
-            }
           });
-        }
-      );
-
-      // 볼륨 버튼
-      $(document).on(
-        'click',
-        `${modalSelector} .shots-card__volumn button`,
-        function (e) {
-          e.preventDefault();
-
-          const $modal = $(modalSelector);
-          const video = $modal.find('.shots-card__poster video')[0];
-          if (!video) return;
-
-          video.muted = !video.muted;
-          updateVolumeButton($modal, video);
-
-          video.play().catch((error) => {
-            console.error('영상 재생 실패:', error);
-          });
-        }
-      );
-
-      // 닫기: 공통 닫기 이벤트 전에 영상 정지 및 요청 취소
-      document.addEventListener('click', function (e) {
-        if (!(e.target instanceof Element)) return;
-
-        const closeButton = e.target.closest(
-          `${modalSelector} .modal__close`
-        );
-        if (!closeButton) return;
-
-        const $modal = $(modalSelector);
-        const $modalList = $(modalSelectorList);
-
-        ++requestId;
-
-        if (ajaxRequest) {
-          ajaxRequest.abort();
-          ajaxRequest = null;
-        }
-
-        stopVideo($modal);
-
-        // 공통 닫기 클릭 처리가 끝난 뒤 내부 요소 삭제
-        setTimeout(() => {
-          // 바로 다시 열었다면 새 내용을 삭제하지 않음
-          if (
-            requestId === closedId
-          ) {
-            $modal.empty();
-            $modalList.empty();
-          }
-        }, 0);
-
-        const closedId = requestId;
-      }, true);
+        });
+      }
     });
   </script>
 </body>
