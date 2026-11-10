@@ -713,7 +713,8 @@ let UI = {
     const threshold = 5;
 
     $win.on('scroll', function () {
-      const $header = $('#header');
+      const $header = $('#header, .container');
+      const $secHeader = $('.section__header');
 
       if (!$header.length) return;
 
@@ -725,10 +726,12 @@ let UI = {
 
       if (scrollTop <= 0) {
         $header.removeClass('scrolled is-show');
+        $secHeader.removeClass('scrolled');
         lastScrollTop = 0;
         return;
       }
       $header.addClass('scrolled');
+      $secHeader.addClass('scrolled');
 
       if (Math.abs(scrollTop - lastScrollTop) <= threshold) return;
 

@@ -20,7 +20,7 @@
     <header id="header" class="header"></header>
 
     <!-- Content -->
-    <main class="container page-product">
+    <main class="container page-product page-product--detail">
  
       <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
       <section class="section section--fixed">
@@ -47,17 +47,17 @@
               <!-- 상품 이미지 -->
               <section class="prod-visual">
                 <!-- 상단 오버레이 플래그 -->
-                <div class="flag">    
-                  <!-- 스타일링 -->
+                <!-- <div class="flag">    
+                  <-- 스타일링 --//>
                   <a href="#" class="flag__item flag__item--style">
                     <span class="flag__text">STYLE</span>
                   </a>
-                  <!-- AI 피팅 -->
+                  <-- AI 피팅 --//>
                   <a href="#" class="flag__item flag__item--ai">
                     <span class="flag__icon" aria-hidden="true"></span>
                     <span class="flag__text">AI FITTING</span>
                   </a>
-                </div>
+                </div> -->
                 <!-- //상단 오버레이 플래그 -->
                 <!-- 메인 이미지 -->
                 <div class="visual-swiper swiper js-prod-visual-main">
@@ -97,49 +97,87 @@
                         <img src="../../assets/images/img_product_sample_07.jpg" alt="상품 이미지 7" class="visual-swiper__img" />
                       </div>
                     </div>
+
+                    <div class="swiper-slide visual-swiper__slide">
+                      <div class="visual-swiper__img-box">
+                        <img src="../../assets/images/img_product_sample_01.jpg" alt="상품 이미지 1" class="visual-swiper__img" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide visual-swiper__slide">
+                      <div class="visual-swiper__img-box">
+                        <img src="../../assets/images/img_product_sample_02.jpg" alt="상품 이미지 2" class="visual-swiper__img" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide visual-swiper__slide">
+                      <div class="visual-swiper__img-box">
+                        <img src="../../assets/images/img_product_sample_03.jpg" alt="상품 이미지 3" class="visual-swiper__img" />
+                      </div>
+                    </div>
                   </div>
                   <!-- 인디케이터 -->
                   <div class="visual-swiper__fraction"></div>
                 </div>
                 <!-- //메인 이미지 -->
                 <!-- 썸네일 -->
-                <div class="thumb-swiper swiper js-prod-visual-thumb" aria-label="상품 이미지 썸네일">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide thumb-swiper__slide">
-                      <button type="button" class="thumb-swiper__btn">
-                        <img src="../../assets/images/img_product_sample_01.jpg" alt="상품 이미지 1 썸네일" />
-                      </button>
+                <div class="thumb-swiper-wrap">
+                  <div class="thumb-swiper swiper js-prod-visual-thumb" aria-label="상품 이미지 썸네일">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide thumb-swiper__slide">
+                        <button type="button" class="thumb-swiper__btn">
+                          <img src="../../assets/images/img_product_sample_01.jpg" alt="상품 이미지 1 썸네일" />
+                        </button>
+                      </div>
+                      <div class="swiper-slide thumb-swiper__slide">
+                        <button type="button" class="thumb-swiper__btn">
+                          <img src="../../assets/images/img_product_sample_02.jpg" alt="상품 이미지 2 썸네일" />
+                        </button>
+                      </div>
+                      <div class="swiper-slide thumb-swiper__slide">
+                        <button type="button" class="thumb-swiper__btn">
+                          <img src="../../assets/images/img_product_sample_03.jpg" alt="상품 이미지 3 썸네일" />
+                        </button>
+                      </div>
+                      <div class="swiper-slide thumb-swiper__slide">
+                        <button type="button" class="thumb-swiper__btn">
+                          <img src="../../assets/images/img_product_sample_04.jpg" alt="상품 이미지 4 썸네일" />
+                        </button>
+                      </div>
+                      <div class="swiper-slide thumb-swiper__slide">
+                        <button type="button" class="thumb-swiper__btn">
+                          <img src="../../assets/images/img_product_sample_05.jpg" alt="상품 이미지 5 썸네일" />
+                        </button>
+                      </div>
+                      <div class="swiper-slide thumb-swiper__slide">
+                        <button type="button" class="thumb-swiper__btn">
+                          <img src="../../assets/images/img_product_sample_06.jpg" alt="상품 이미지 6 썸네일" />
+                        </button>
+                      </div>
+                      <div class="swiper-slide thumb-swiper__slide">
+                        <button type="button" class="thumb-swiper__btn">
+                          <img src="../../assets/images/img_product_sample_07.jpg" alt="상품 이미지 7 썸네일" />
+                        </button>
+                      </div>
+
+                      <div class="swiper-slide thumb-swiper__slide">
+                        <button type="button" class="thumb-swiper__btn">
+                          <img src="../../assets/images/img_product_sample_01.jpg" alt="상품 이미지 1 썸네일" />
+                        </button>
+                      </div>
+                      <div class="swiper-slide thumb-swiper__slide">
+                        <button type="button" class="thumb-swiper__btn">
+                          <img src="../../assets/images/img_product_sample_02.jpg" alt="상품 이미지 2 썸네일" />
+                        </button>
+                      </div>
+                      <div class="swiper-slide thumb-swiper__slide">
+                        <button type="button" class="thumb-swiper__btn">
+                          <img src="../../assets/images/img_product_sample_03.jpg" alt="상품 이미지 3 썸네일" />
+                        </button>
+                      </div>
                     </div>
-                    <div class="swiper-slide thumb-swiper__slide">
-                      <button type="button" class="thumb-swiper__btn">
-                        <img src="../../assets/images/img_product_sample_02.jpg" alt="상품 이미지 2 썸네일" />
-                      </button>
-                    </div>
-                    <div class="swiper-slide thumb-swiper__slide">
-                      <button type="button" class="thumb-swiper__btn">
-                        <img src="../../assets/images/img_product_sample_03.jpg" alt="상품 이미지 3 썸네일" />
-                      </button>
-                    </div>
-                    <div class="swiper-slide thumb-swiper__slide">
-                      <button type="button" class="thumb-swiper__btn">
-                        <img src="../../assets/images/img_product_sample_04.jpg" alt="상품 이미지 4 썸네일" />
-                      </button>
-                    </div>
-                    <div class="swiper-slide thumb-swiper__slide">
-                      <button type="button" class="thumb-swiper__btn">
-                        <img src="../../assets/images/img_product_sample_05.jpg" alt="상품 이미지 5 썸네일" />
-                      </button>
-                    </div>
-                    <div class="swiper-slide thumb-swiper__slide">
-                      <button type="button" class="thumb-swiper__btn">
-                        <img src="../../assets/images/img_product_sample_06.jpg" alt="상품 이미지 6 썸네일" />
-                      </button>
-                    </div>
-                    <div class="swiper-slide thumb-swiper__slide">
-                      <button type="button" class="thumb-swiper__btn">
-                        <img src="../../assets/images/img_product_sample_07.jpg" alt="상품 이미지 7 썸네일" />
-                      </button>
-                    </div>
+                  </div>
+                  <div class="swiper-button">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                   </div>
                 </div>
                 <!-- //썸네일 -->
@@ -149,36 +187,12 @@
                 <div class="prod-option__inner">
                   <!-- item-summary : 브랜드 + 상품명 + 메타 -->
                   <div class="item-summary">
-                    <p class="item-summary__brand">NIKE</p>
-                    <h2 class="item-summary__name">나이키 줌 플라이 6</h2>
-                    <div class="item-summary__meta-wrap">
-                      <div class="item-summary__meta">
-                        <span class="item-summary__code">hj8485-100</span>
-                        <!-- rating-stars : empty/filled 레이어 방식 별점 -->
-                        <div class="item-summary__rating">
-                          <div class="item-summary__stars rating-stars">
-                            <!-- 빈 별 (베이스 레이어) -->
-                            <span class="rating-stars__empty">
-                              <span class="rating-stars__star"></span>
-                              <span class="rating-stars__star"></span>
-                              <span class="rating-stars__star"></span>
-                              <span class="rating-stars__star"></span>
-                              <span class="rating-stars__star"></span>
-                            </span>
-                            <!-- 채워진 별 (width % 로 점수 표현) -->
-                            <span class="rating-stars__filled" style="width: 100%;">
-                              <span class="rating-stars__star"></span>
-                              <span class="rating-stars__star"></span>
-                              <span class="rating-stars__star"></span>
-                              <span class="rating-stars__star"></span>
-                              <span class="rating-stars__star"></span>
-                            </span>
-                          </div>
-                          <span class="item-summary__rating-count">5</span>
-                        </div>
-                        <span class="item-summary__review-count">(14)</span>
-                      </div>
-                      <div class="item-summary__actions">
+                    <div class="item-summary__brand-wrap">
+                      <p class="item-summary__brand">
+                        <a href="#브랜드홈" class="item-summary__brand-link">NIKE</a>
+                        <a href="#러닝화홈" class="item-summary__brand-link">러닝화</a>
+                      </p>
+                     <div class="item-summary__actions">
                         <button type="button" class="btn-icon btn-icon--share" aria-label="공유">
                           <span class="btn-icon__icon"></span>
                         </button>
@@ -188,112 +202,221 @@
                         </button>
                       </div>
                     </div>
+                    <h2 class="item-summary__name">나이키 줌 플라이 6</h2>
+                    <div class="item-summary__meta">
+                      <span class="item-summary__code">hj8485-100</span>
+                      <!-- rating-stars : empty/filled 레이어 방식 별점 -->
+                      <div class="item-summary__rating">
+                        <div class="item-summary__stars rating-stars">
+                          <!-- 빈 별 (베이스 레이어) -->
+                          <span class="rating-stars__empty">
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                          </span>
+                          <!-- 채워진 별 (width % 로 점수 표현) -->
+                          <span class="rating-stars__filled" style="width: 90%;">
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                          </span>
+                        </div>
+                        <span class="item-summary__rating-count">4.5</span>
+                      </div>
+                      <!-- <span class="item-summary__review-count">(14)</span> -->
+                       <div class="item-summary__review-more">
+                        <a href="#" class="item-summary__review-more-link">306개 리뷰 보기</a>
+                       </div>
+                    </div>
                   </div>
                   <!-- //item-summary -->
                   <!-- price : 가격 -->
                   <div class="price">
-                    <div class="price__origin">
-                      <span class="price__num">240,000</span><span class="price__unit">원</span>
-                    </div>
                     <div class="price__row">
+                      <div class="price__origin">
+                        <span class="price__num">240,000</span><!-- <span class="price__unit">원</span> -->
+                      </div>
                       <div class="price__current">
                         <span class="price__rate">5%</span>
                         <span class="price__num">229,000</span><span class="price__unit">원</span>
                       </div>
-                      <button type="button" class="price__coupon-btn js-modal-open" data-target="#modal1">쿠폰받기</button>
                     </div>
+                    <button type="button" class="price__coupon-btn js-modal-open" data-target="#modal1">쿠폰받기</button>
                   </div>
                   <!-- //price -->
                   <!-- benefit : 나의 최대 혜택가 -->
-                  <div class="benefit">
-                    <button type="button" class="benefit__toggle" aria-expanded="false" aria-controls="benefit-layer">
-                      <span class="benefit__label">나의 최대 혜택가</span>
-                      <div class="benefit__price">
-                        <span class="benefit__price-num">152,300</span><span class="benefit__price-unit">원</span>
-                      </div>
-                    </button>
-                    <!-- 혜택 상세 레이어 -->
-                    <div class="benefit__layer" id="benefit-layer" role="region" aria-label="혜택 상세">
-                      <div class="benefit-detail">
-                        <!-- 할인 목록 -->
-                        <ul class="benefit-detail__list">
-                          <li class="benefit-detail__item">
-                            <span class="benefit-detail__name">상품할인</span>
-                            <span class="benefit-detail__value">
-                              <span class="benefit-detail__value-num">-24,000</span><span class="benefit-detail__value-unit">원</span>
-                            </span>
-                          </li>
-                          <li class="benefit-detail__item">
-                            <button type="button" class="js-toggle" aria-expanded="false"  data-target="#payco-detail">
-                              <span class="benefit-detail__name">페이코 결제 혜택(14%)</span>
-                            </button>
-                            <span class="benefit-detail__value">
-                              <span class="benefit-detail__value-num">-19,600</span><span class="benefit-detail__value-unit">원</span>
-                            </span>                            
-                          </li>
-                          <li class="benefit-detail__item js-toggle__content" id="payco-detail">
-                            <span class="benefit-detail__name">페이코 결제 혜택 상세 내용</span>
-                            <span class="benefit-detail__value">
-                              <span class="benefit-detail__value-num">-9,156</span><span class="benefit-detail__value-unit">원</span>
-                            </span>
-                          </li>
-                          <li class="benefit-detail__item">
-                            <span class="benefit-detail__name">플러스 혜택</span>
-                            <span class="benefit-detail__value">
-                              <span class="benefit-detail__value-num">-9,156</span><span class="benefit-detail__value-unit">원</span>
-                            </span>
-                          </li>
-                          <li class="benefit-detail__item">
-                            <span class="benefit-detail__name">배송쿠폰 할인</span>
-                            <span class="benefit-detail__value">
-                              <span class="benefit-detail__value-num">-3,000</span><span class="benefit-detail__value-unit">원</span>
-                            </span>
-                          </li>
-                        </ul>
-                        <!-- 최종 판매가 -->
-                        <div class="benefit-detail__total">
-                          <span class="benefit-detail__total-label">최종 판매가</span>
-                          <span class="benefit-detail__price">
-                            <span class="benefit-detail__price-num">142,250</span><span class="benefit-detail__price-unit">원</span>
-                          </span>
+                  <div class="benefit-wrap">
+                    <div class="benefit">
+                      <button type="button" class="benefit__toggle" aria-expanded="false" aria-controls="benefit-layer">
+                        <span class="benefit__label">최대 혜택가</span>
+                        <div class="benefit__price">
+                          <span class="benefit__price-num">152,300</span><span class="benefit__price-unit">원</span>
                         </div>
-                        <!-- 등급별 적립 혜택 -->
-                        <div class="benefit-detail__grade">
-                          <span class="benefit-detail__grade-title">등급별 적립 혜택</span>
-                          <ul class="benefit-detail__grade-list">
-                            <li class="benefit-detail__grade-item">CREW 1.3%적립</li>
-                            <li class="benefit-detail__grade-item">VIBE 1.3%적립</li>
-                            <li class="benefit-detail__grade-item">FLEX 2%적립</li>
-                            <li class="benefit-detail__grade-item">PRIME 2.3적립</li>
-                            <li class="benefit-detail__grade-item">LEGEND 2.5%적립</li>
+                      </button>
+                      <!-- 혜택 상세 레이어 -->
+                      <div class="benefit__layer" id="benefit-layer" role="region" aria-label="혜택 상세">
+                        <div class="benefit-detail">
+                          <!-- 할인 목록 -->
+                          <ul class="benefit-detail__list">
+                            <li class="benefit-detail__item">
+                              <span class="benefit-detail__name">상품할인</span>
+                              <span class="benefit-detail__value">
+                                <span class="benefit-detail__value-num">-24,000</span><span class="benefit-detail__value-unit">원</span>
+                              </span>
+                            </li>
+                            <li class="benefit-detail__item">
+                              <button type="button" class="js-toggle" aria-expanded="false"  data-target="#payco-detail">
+                                <span class="benefit-detail__name">페이코 결제 혜택(14%)</span>
+                              </button>
+                              <span class="benefit-detail__value">
+                                <span class="benefit-detail__value-num">-19,600</span><span class="benefit-detail__value-unit">원</span>
+                              </span>                            
+                            </li>
+                            <li class="benefit-detail__item js-toggle__content" id="payco-detail">
+                              <span class="benefit-detail__name">페이코 결제 혜택 상세 내용</span>
+                              <span class="benefit-detail__value">
+                                <span class="benefit-detail__value-num">-9,156</span><span class="benefit-detail__value-unit">원</span>
+                              </span>
+                            </li>
+                            <li class="benefit-detail__item">
+                              <span class="benefit-detail__name">플러스 혜택</span>
+                              <span class="benefit-detail__value">
+                                <span class="benefit-detail__value-num">-9,156</span><span class="benefit-detail__value-unit">원</span>
+                              </span>
+                            </li>
+                            <li class="benefit-detail__item">
+                              <span class="benefit-detail__name">배송쿠폰 할인</span>
+                              <span class="benefit-detail__value">
+                                <span class="benefit-detail__value-num">-3,000</span><span class="benefit-detail__value-unit">원</span>
+                              </span>
+                            </li>
                           </ul>
+                          <!-- 최종 판매가 -->
+                          <div class="benefit-detail__total">
+                            <span class="benefit-detail__total-label">최종 판매가</span>
+                            <span class="benefit-detail__price">
+                              <span class="benefit-detail__price-num">142,250</span><span class="benefit-detail__price-unit">원</span>
+                            </span>
+                          </div>
+                          <!-- 등급별 적립 혜택 -->
+                          <div class="benefit-detail__grade">
+                            <span class="benefit-detail__grade-title">등급별 적립 혜택</span>
+                            <ul class="benefit-detail__grade-list">
+                              <li class="benefit-detail__grade-item">CREW 1.3%적립</li>
+                              <li class="benefit-detail__grade-item">VIBE 1.3%적립</li>
+                              <li class="benefit-detail__grade-item">FLEX 2%적립</li>
+                              <li class="benefit-detail__grade-item">PRIME 2.3적립</li>
+                              <li class="benefit-detail__grade-item">LEGEND 2.5%적립</li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
+                      <!-- //혜택 상세 레이어 -->
                     </div>
-                    <!-- //혜택 상세 레이어 -->
+                    <!-- //benefit -->
+                    <!-- login-banner : 로그인 유도 배너 -->
+                    <span class="login-banner-info is-pc">로그인 후 적용 가능한 혜택을 확인해 주세요.</span>
+                    <a href="#" class="login-banner" aria-label="로그인 및 회원가입 페이지로 이동">
+                      <span class="login-banner__text">
+                        로그인하고 나에게 맞는 혜택 확인
+                      </span>
+                    </a>
                   </div>
-                  <!-- //benefit -->
-                  <!-- login-banner : 로그인 유도 배너 -->
-                  <a href="#" class="login-banner" aria-label="로그인 및 회원가입 페이지로 이동">
-                    <span class="login-banner__text">
-                      로그인 및 회원 가입 후 다양한 혜택을 받으세요.
-                    </span>
-                  </a>
-                  <!-- card-banner : 무이자 할부 혜택 안내 배너 -->
-                  <a href="#" class="card-banner js-modal-open" data-target="#modal2" aria-label="무이자 할부 혜택 안내">
-                    <span class="card-banner__text">
-                      무이자 할부 혜택 안내
-                    </span>
-                  </a>
                   <!-- //card-banner -->
-                  <!-- color-selector : 컬러 선택 -->
+                  <!-- benefit-tag : 혜택 태그 영역 -->
+                  <ul class="benefit-tag">
+                    <li class="benefit-tag__item">
+                      <div class="chip chip--dark">
+                        <span class="chip__icon chip__icon--free-shipping" aria-hidden="true"></span>
+                        <span class="chip__text">무료배송</span>
+                      </div>
+                    </li>
+                    <li class="benefit-tag__item">
+                      <div class="chip">
+                        <span class="chip__icon chip__icon--free-shipping-b" aria-hidden="true"></span>
+                        <span class="chip__text">무료배송</span>
+                      </div>
+                    </li>
+                    <li class="benefit-tag__item">
+                      <div class="chip">
+                        <span class="chip__icon chip__icon--plus" aria-hidden="true"></span>
+                        <span class="chip__text">1+1 상품</span>
+                      </div>
+                    </li>
+                    <li class="benefit-tag__item">
+                      <div class="chip">
+                        <span class="chip__icon chip__icon--pickup" aria-hidden="true"></span>
+                        <span class="chip__text">매장픽업</span>
+                      </div>
+                    </li>
+                    <li class="benefit-tag__item">
+                      <div class="chip">
+                        <span class="chip__icon chip__icon--giftcard" aria-hidden="true"></span>
+                        <span class="chip__text">사은품</span>
+                      </div>
+                    </li>
+                    <li class="benefit-tag__item">
+                      <div class="chip">
+                        <span class="chip__icon chip__icon--installment" aria-hidden="true"></span>
+                        <span class="chip__text">무이자 할부</span>
+                      </div>
+                    </li>
+                    <li class="benefit-tag__item">
+                      <div class="chip">
+                        <span class="chip__icon chip__icon--coupon-excluded" aria-hidden="true"></span>
+                        <span class="chip__text">쿠폰적용제외</span>
+                      </div>
+                    </li>
+                    <li class="benefit-tag__item">
+                      <div class="chip">
+                        <span class="chip__icon chip__icon--coupon" aria-hidden="true"></span>
+                        <span class="chip__text">할인쿠폰</span>
+                      </div>
+                    </li>
+                  </ul>
+                  <!-- //benefit-tag -->
+                  <!-- delivery : 배송정보 -->
+                  <div class="delivery">
+                    <dl class="delivery__list">
+                      <dt class="delivery__title">쿠폰</dt>
+                      <dd class="delivery__item">로그인 및 회원 가입 후 다양한 혜택을 받드세요.</dd>
+                    </dl>
+                    <dl class="delivery__list">
+                      <dt class="delivery__title">혜택</dt>
+                      <dd class="delivery__item">
+                        <span class="delivery__item-benefit-price">나의 최대 혜택가 152.300원</span>
+                      </dd>
+                    </dl>
+                    <dl class="delivery__list">
+                      <dt class="delivery__title">결제</dt>
+                      <dd class="delivery__item">
+                        <!-- 링크 : 무이자 할부 혜택 안내 배너 -->
+                        <a href="#" class="js-modal-open" data-target="#modal2" aria-label="무이자 할부 혜택 안내">무이자 할부 혜택 안내</a>
+                      </dd>
+                    </dl>
+                    <dl class="delivery__list">
+                      <dt class="delivery__title">배송</dt>
+                      <dd class="delivery__item">
+                        <p class="delivery__item--bold">배송비 3,000원 (5만원 이상 무료)</p>
+                        <p>오후 2시까지 주문 시 당일출고</p>
+                        <p>제주 및 도서산간지역 배송불가 상품</p>
+                        <p>복수배송지로 설정 시 배송지 별로 배송비 책정</p>
+                      </dd>
+                    </dl>
+                  </div>
+                  <!-- //delivery -->
+                   <!-- color-selector : 색상 선택 -->
                   <div class="color-selector">
-                    <p class="color-selector__label">컬러</p>
+                    <p class="color-selector__label">색상</p>
                     <ul class="color-selector__list" role="group" aria-label="컬러 선택">
                       <li>
                         <!-- 
-                          선택된 컬러 .color-selector__btn에 is-active 추가
-                          품절된 컬러 .color-selector__btn에 is-soldout, disabled, aria-disabled="true" 추가
+                          선택된 색상 .color-selector__btn에 is-active 추가
+                          품절된 색상 .color-selector__btn에 is-soldout, disabled, aria-disabled="true" 추가
                         -->
                         <button type="button" class="color-selector__btn is-active">
                           <img src="../../assets/images/img_color_sample_01.jpg" alt="Black 컬러" />
@@ -354,69 +477,6 @@
                     </div>
                   </div>
                   <!-- //size-selector -->
-                  <!-- benefit-tag : 혜택 태그 영역 -->
-                  <ul class="benefit-tag">
-                    <li class="benefit-tag__item">
-                      <div class="chip chip--dark">
-                        <span class="chip__icon chip__icon--free-shipping" aria-hidden="true"></span>
-                        <span class="chip__text">무료배송</span>
-                      </div>
-                    </li>
-                    <li class="benefit-tag__item">
-                      <div class="chip">
-                        <span class="chip__icon chip__icon--free-shipping-b" aria-hidden="true"></span>
-                        <span class="chip__text">무료배송</span>
-                      </div>
-                    </li>
-                    <li class="benefit-tag__item">
-                      <div class="chip">
-                        <span class="chip__icon chip__icon--plus" aria-hidden="true"></span>
-                        <span class="chip__text">1+1 상품</span>
-                      </div>
-                    </li>
-                    <li class="benefit-tag__item">
-                      <div class="chip">
-                        <span class="chip__icon chip__icon--pickup" aria-hidden="true"></span>
-                        <span class="chip__text">매장픽업</span>
-                      </div>
-                    </li>
-                    <li class="benefit-tag__item">
-                      <div class="chip">
-                        <span class="chip__icon chip__icon--giftcard" aria-hidden="true"></span>
-                        <span class="chip__text">사은품</span>
-                      </div>
-                    </li>
-                    <li class="benefit-tag__item">
-                      <div class="chip">
-                        <span class="chip__icon chip__icon--installment" aria-hidden="true"></span>
-                        <span class="chip__text">무이자 할부</span>
-                      </div>
-                    </li>
-                    <li class="benefit-tag__item">
-                      <div class="chip">
-                        <span class="chip__icon chip__icon--coupon-excluded" aria-hidden="true"></span>
-                        <span class="chip__text">쿠폰적용제외</span>
-                      </div>
-                    </li>
-                    <li class="benefit-tag__item">
-                      <div class="chip">
-                        <span class="chip__icon chip__icon--coupon" aria-hidden="true"></span>
-                        <span class="chip__text">할인쿠폰</span>
-                      </div>
-                    </li>
-                  </ul>
-                  <!-- //benefit-tag -->
-                  <!-- delivery : 배송정보 -->
-                  <div class="delivery">
-                    <h4 class="delivery__title">배송정보</h4>
-                    <ul class="delivery__list">
-                      <li class="delivery__item delivery__item--bold">제주 및 도서산간지역 배송불가 상품</li>
-                      <li class="delivery__item">배송비 3,000원(5만원 이상 무료)</li>
-                      <li class="delivery__item">오후 2시까지 주문 시 당일출고</li>
-                      <li class="delivery__item">복수배송지로 설정 시 각 배송지 별로 배송비 책정</li>
-                    </ul>
-                  </div>
-                  <!-- //delivery -->
                   <!-- option-list : 선택된 옵션 목록 -->
                   <div class="option-list" role="list" aria-label="선택된 옵션">
                     <!-- option-item : 선택 항목 개별 -->
@@ -496,7 +556,7 @@
               </aside>
               <div class="divider"></div>
               <!-- AI 추천 BEST -->
-              <section class="prod-recommend">
+              <!-- <section class="prod-recommend">
                 <h3 class="prod-recommend__title">AI 추천 BEST</h3>
                 <div class="product">
                   <div class="product-swiper js-product-swiper">
@@ -514,14 +574,14 @@
                               <span class="product-card__brand">NIKE</span>
                               <span class="product-card__name">나이키 알파플라이 3글램</span>
                               <div class="product-card__price">
-                                <!-- 정가 -->
+                                <-- 정가 --//>
                                 <div class="product-card__origin">
                                   <span class="price">
                                     <span class="price__num">219,000</span>
                                     <span class="price__unit">원</span>
                                   </span>
                                 </div>
-                                <!-- 할인 영역 -->
+                                <-- 할인 영역 --//>
                                 <div class="product-card__cost">
                                   <span class="product-card__percent">10%</span>
                                   <span class="price">
@@ -547,14 +607,14 @@
                               <span class="product-card__brand">NIKE</span>
                               <span class="product-card__name">나이키 알파플라이 3글램</span>
                               <div class="product-card__price">
-                                <!-- 정가 -->
+                                <-- 정가 --//>
                                 <div class="product-card__origin">
                                   <span class="price">
                                     <span class="price__num">219,000</span>
                                     <span class="price__unit">원</span>
                                   </span>
                                 </div>
-                                <!-- 할인 영역 -->
+                                <-- 할인 영역 --//>
                                 <div class="product-card__cost">
                                   <span class="product-card__percent">10%</span>
                                   <span class="price">
@@ -580,14 +640,14 @@
                               <span class="product-card__brand">NIKE</span>
                               <span class="product-card__name">나이키 알파플라이 3글램</span>
                               <div class="product-card__price">
-                                <!-- 정가 -->
+                                <-- 정가 --//>
                                 <div class="product-card__origin">
                                   <span class="price">
                                     <span class="price__num">219,000</span>
                                     <span class="price__unit">원</span>
                                   </span>
                                 </div>
-                                <!-- 할인 영역 -->
+                                <-- 할인 영역 --//>
                                 <div class="product-card__cost">
                                   <span class="product-card__percent">10%</span>
                                   <span class="price">
@@ -613,14 +673,14 @@
                               <span class="product-card__brand">NIKE</span>
                               <span class="product-card__name">나이키 알파플라이 3글램</span>
                               <div class="product-card__price">
-                                <!-- 정가 -->
+                                <-- 정가 --//>
                                 <div class="product-card__origin">
                                   <span class="price">
                                     <span class="price__num">219,000</span>
                                     <span class="price__unit">원</span>
                                   </span>
                                 </div>
-                                <!-- 할인 영역 -->
+                                <-- 할인 영역 --//>
                                 <div class="product-card__cost">
                                   <span class="product-card__percent">10%</span>
                                   <span class="price">
@@ -646,14 +706,14 @@
                               <span class="product-card__brand">NIKE</span>
                               <span class="product-card__name">나이키 알파플라이 3글램</span>
                               <div class="product-card__price">
-                                <!-- 정가 -->
+                                <-- 정가 --//>
                                 <div class="product-card__origin">
                                   <span class="price">
                                     <span class="price__num">219,000</span>
                                     <span class="price__unit">원</span>
                                   </span>
                                 </div>
-                                <!-- 할인 영역 -->
+                                <-- 할인 영역 --//>
                                 <div class="product-card__cost">
                                   <span class="product-card__percent">10%</span>
                                   <span class="price">
@@ -679,14 +739,14 @@
                               <span class="product-card__brand">NIKE</span>
                               <span class="product-card__name">나이키 알파플라이 3글램</span>
                               <div class="product-card__price">
-                                <!-- 정가 -->
+                                <-- 정가 --//>
                                 <div class="product-card__origin">
                                   <span class="price">
                                     <span class="price__num">219,000</span>
                                     <span class="price__unit">원</span>
                                   </span>
                                 </div>
-                                <!-- 할인 영역 -->
+                                <-- 할인 영역 --//>
                                 <div class="product-card__cost">
                                   <span class="product-card__percent">10%</span>
                                   <span class="price">
@@ -706,7 +766,7 @@
                     </div>
                   </div>
                 </div>
-              </section>
+              </section> -->
             </div>
             <div class="divider"></div> 
 
@@ -769,6 +829,18 @@
                 </nav>
                 <!-- 상품 상세 정보 -->
                 <section class="prod-info" id="section-info" aria-label="상세정보">
+                  <!-- 상세 상품 고시 정보 -->
+                  <div class="prod-info__notice" id="prod-info-notice">
+                    <!-- <h3 class="prod-info__notice-title is-pc">상품정보</h3> -->
+                    <dl>
+                      <dt>상품명</dt>
+                      <dd>나이키 줌 플라이 6</dd>
+                      <dt>품번</dt>
+                      <dd>HJ8485-100</dd>
+                      <dt>브랜드</dt>
+                      <dd>NIKE</dd>
+                    </dl>
+                  </div>
                   <!-- 상세 이미지 영역 -->
                   <div class="prod-info__body" id="prod-info-body">
                     <div class="prod-info__img-wrap">
@@ -798,31 +870,33 @@
                 <!-- //상품 상세 정보 -->
                 <!-- 상품평 -->
                 <section class="prod-review" id="section-review" aria-label="상품평">
-                  <h3 class="prod-review__title">REVIEW</h3>
+                  <h3 class="prod-review__title">상품리뷰 <span class="prod-review__count">306</span></h3>
                   <!-- 평점 요약 -->
                   <div class="review-summary">
                     <!-- 평점 -->
                     <div class="review-summary__score">
-                      <p class="review-summary__label">REVIEW</p>
-                      <div class="rating-stars rating-stars--lg rating-stars--yellow" aria-label="별점 4.5점" role="img">
-                        <span class="rating-stars__empty" aria-hidden="true">
-                          <span class="rating-stars__star"></span>
-                          <span class="rating-stars__star"></span>
-                          <span class="rating-stars__star"></span>
-                          <span class="rating-stars__star"></span>
-                          <span class="rating-stars__star"></span>
-                        </span>
-                        <span class="rating-stars__filled" style="width: 90%;" aria-hidden="true">
-                          <span class="rating-stars__star"></span>
-                          <span class="rating-stars__star"></span>
-                          <span class="rating-stars__star"></span>
-                          <span class="rating-stars__star"></span>
-                          <span class="rating-stars__star"></span>
-                        </span>
-                      </div>
+                      <!-- <p class="review-summary__label">REVIEW</p> -->
+                      <p class="review-summary__num">4.5<!-- <em>/ 5</em> --></p>
 
-                      <p class="review-summary__num">4.5 <em>/ 5</em></p>
-                      <p class="review-summary__count">리뷰 306개</p>
+                      <div class="rating-stars-wrap">
+                        <div class="rating-stars rating-stars rating-stars--md" aria-label="별점 4.5점" role="img">
+                          <span class="rating-stars__empty" aria-hidden="true">
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                          </span>
+                          <span class="rating-stars__filled" style="width: 90%;" aria-hidden="true">
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                          </span>
+                        </div>
+                        <p class="review-summary__count">리뷰 306개</p>
+                      </div>
                     </div>
                     <!-- 만족도 -->
                     <div class="review-summary__dist">
@@ -902,7 +976,7 @@
                     <!-- select 필터 -->
                     <div class="review-filter__selects" role="group" aria-label="리뷰 필터">
                       <div class="select">
-                        <div class="select__box">
+                        <div class="select__box no-arrow">
                           <select class="select__field" aria-label="별점 필터">
                             <option value="" disabled selected hidden>별점</option>
                             <option value="5">5점</option>
@@ -914,7 +988,7 @@
                         </div>
                       </div>
                       <div class="select">
-                        <div class="select__box">
+                        <div class="select__box no-arrow">
                           <select class="select__field" aria-label="사이즈 필터">
                             <option value="" disabled selected hidden>사이즈 어때요?</option>
                             <option value="small">작아요</option>
@@ -924,7 +998,7 @@
                         </div>
                       </div>
                       <div class="select">
-                        <div class="select__box">
+                        <div class="select__box no-arrow">
                           <select class="select__field" aria-label="발볼 필터">
                             <option value="" disabled selected hidden>발볼</option>
                             <option value="narrow">좁아요</option>
@@ -934,7 +1008,7 @@
                         </div>
                       </div>
                       <div class="select">
-                        <div class="select__box">
+                        <div class="select__box no-arrow">
                           <select class="select__field" aria-label="착화감 필터">
                             <option value="" disabled selected hidden>착화감</option>
                             <option value="comfortable">편한해요</option>
@@ -944,7 +1018,7 @@
                         </div>
                       </div>
                       <div class="select">
-                        <div class="select__box">
+                        <div class="select__box no-arrow">
                           <select class="select__field" aria-label="색상 필터">
                             <option value="" disabled selected hidden>색상</option>
                             <option value="same">화면과 같아요</option>
@@ -956,23 +1030,23 @@
                     <!-- 카테고리 태그 필터 -->
                     <div class="review-filter__tags">
                       <div class="radio-group radio-group--tags radio-group--scroll">
-                        <div class="radio-btn radio-btn--tag">
+                        <div class="radio-btn radio-btn--tag-text">
                           <input type="radio" id="radio1" name="radioSet" class="radio-btn__input" checked />
                           <label for="radio1" class="radio-btn__label">전체</label>
                         </div>
-                        <div class="radio-btn radio-btn--tag">
+                        <div class="radio-btn radio-btn--tag-text">
                           <input type="radio" id="radio2" name="radioSet" class="radio-btn__input"/>
                           <label for="radio2" class="radio-btn__label">디자인</label>
                         </div>      
-                        <div class="radio-btn radio-btn--tag">
+                        <div class="radio-btn radio-btn--tag-text">
                           <input type="radio" id="radio3" name="radioSet" class="radio-btn__input" />
                           <label for="radio3" class="radio-btn__label">마감처리</label>
                         </div>      
-                        <div class="radio-btn radio-btn--tag">
+                        <div class="radio-btn radio-btn--tag-text">
                           <input type="radio" id="radio4" name="radioSet" class="radio-btn__input" />
                           <label for="radio4" class="radio-btn__label">착용감</label>
                         </div>
-                        <div class="radio-btn radio-btn--tag">
+                        <div class="radio-btn radio-btn--tag-text">
                           <input type="radio" id="radio5" name="radioSet" class="radio-btn__input" />
                           <label for="radio5" class="radio-btn__label">라인핏</label>
                         </div>
@@ -986,7 +1060,7 @@
                     <!-- review-item -->
                     <li class="review-item">
                       <div class="review-item__header">
-                        <div class="rating-stars rating-stars--md rating-stars--yellow" aria-label="별점 4점" role="img">
+                        <div class="rating-stars rating-stars rating-stars" aria-label="별점 4점" role="img">
                           <span class="rating-stars__empty" aria-hidden="true">
                             <span class="rating-stars__star"></span>
                             <span class="rating-stars__star"></span>
@@ -1038,7 +1112,7 @@
                     <!-- review-item -->
                     <li class="review-item">
                       <div class="review-item__header">
-                        <div class="rating-stars rating-stars--md rating-stars--yellow" aria-label="별점 4점" role="img">
+                        <div class="rating-stars rating-stars rating-stars" aria-label="별점 4점" role="img">
                           <span class="rating-stars__empty" aria-hidden="true">
                             <span class="rating-stars__star"></span>
                             <span class="rating-stars__star"></span>
@@ -1090,7 +1164,7 @@
                     <!-- review-item -->
                     <li class="review-item">
                       <div class="review-item__header">
-                        <div class="rating-stars rating-stars--md rating-stars--yellow" aria-label="별점 4점" role="img">
+                        <div class="rating-stars rating-stars rating-stars" aria-label="별점 4점" role="img">
                           <span class="rating-stars__empty" aria-hidden="true">
                             <span class="rating-stars__star"></span>
                             <span class="rating-stars__star"></span>
@@ -2974,6 +3048,7 @@
       const thumbSwiper = new Swiper('.js-prod-visual-thumb', {
         slidesPerView: 'auto',
         spaceBetween: 8,
+        direction: 'vertical',
         watchSlidesProgress: true,
         breakpoints: {
           0: {
@@ -2987,18 +3062,14 @@
 
       // 메인 상품 슬라이드
       new Swiper('.js-prod-visual-main', {
+        spaceBetween: 0,
+        slidesPerView: 1,
         thumbs: {
           swiper: thumbSwiper,
         },
-        breakpoints: {
-          0: {
-            spaceBetween: 0,
-            slidesPerView: 1,
-          },
-          1024: {
-            spaceBetween: 8,
-            slidesPerView: 1.25,
-          },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
         pagination: {
           el: '.visual-swiper__fraction',
