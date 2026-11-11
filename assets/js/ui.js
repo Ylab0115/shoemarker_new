@@ -420,7 +420,7 @@ let UI = {
       updateCount();
     });
   },
-  // 상품 상세 스크롤 탭
+  // 상품 상세 + 키즈관 스크롤 탭
   prodTabs: function () {
     const $prodTabs = $('.prod-tabs');
     const $tabBtns = $prodTabs.find('.prod-tabs__btn');
@@ -879,6 +879,7 @@ let UI = {
     const pcOnly = () => !window.matchMedia('(max-width: 1024px)').matches;
 
     function getContentHeight($item) {
+      $('.search-layer.is-active').removeClass('is-active');
       const $content = $item.children('.nav__content');
       if (!$content.length) return 0;
 
@@ -889,6 +890,7 @@ let UI = {
       if (!pcOnly()) return;
       wasDark = $header.hasClass('header--dark');
       $header.removeClass('scrolled header--dark');
+      console.log('aaa');
     }
 
     function closeNav() {
@@ -1192,6 +1194,11 @@ let UI = {
     }
 
     $(document).on('click', '.util__item--search', function (e) {
+      // 모바일에서는 검색페이지로 이동
+      if ($(this).closest('.header__util-wrap').hasClass('is-mo')) {
+        return;
+      }
+
       e.preventDefault();
 
       const $header = $('.header');
