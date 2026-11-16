@@ -420,6 +420,23 @@ let UI = {
       updateCount();
     });
   },
+  // 파일첨부
+  uploadFile: function () {
+    $('.upload__file').each(function () {
+      const $upload = $(this);
+      const $input = $upload.find('input[type="file"]');
+      const $button = $upload.find('.file__button');
+      const $fileName = $upload.find('.file-name');
+
+      $button.off('click.uploadFile').on('click.uploadFile', function () {
+        $input[0].click();
+      });
+
+      $input.off('change.uploadFile').on('change.uploadFile', function () {
+        $fileName.val(this.files[0]?.name || '');
+      });
+    });
+  },
   // 상품 상세 + 키즈관 스크롤 탭
   prodTabs: function () {
     const $prodTabs = $('.prod-tabs');
@@ -1413,6 +1430,7 @@ $(function () {
   UI.tabBar();
   UI.orderBlock();
   UI.textCount();
+  UI.uploadFile();
   UI.prodTabs();
   UI.promoTabs();
   UI.prodInfoMore();

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커</title>
+
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  
+  <link rel="stylesheet" href="../../assets/css/style.min.css">
+  <!-- Style Add -->
+  <link rel="stylesheet" href="../../assets/css/style-add.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <main class="container page-partnership">
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">입점/제휴 문의</h2>
+          </div>
+          <div class="partnership">
+            <div class="partnership__inner">
+              <p class="section__desc">최신 트렌드의 대한민국 대표 슈즈멀티샵 개척자인 슈마커와 여러분의 성공 비니지스를 함께 하세요.</p>
+              <div class="partnership__form">
+                <div class="form">
+                  <div class="form__field-title">필수 입력사항</div>
+                  <!-- 문의유형 -->
+                  <div class="form__field is-required">
+                    <label for="input3" class="form__label">문의유형</label>
+                    <div class="form__field-radio-wrap">
+                      <div class="radio">
+                        <input type="radio" id="radio01-1" name="radioSet01" class="radio__input">
+                        <label for="radio01-1" class="radio__label">상품 입점</label>
+                      </div>
+                      <div class="radio">
+                        <input type="radio" id="radio01-2" name="radioSet01" class="radio__input">
+                        <label for="radio01-2" class="radio__label">마케팅 제휴</label>
+                      </div>
+                      <div class="radio">
+                        <input type="radio" id="radio01-3" name="radioSet01" class="radio__input">
+                        <label for="radio01-3" class="radio__label">기타</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 이름 -->
+                  <div class="form__field is-required">
+                    <label for="input1-1" class="form__label">이름</label>
+                    <input type="text" id="input1-1" class="form__input" value=""/>
+                  </div>
+
+                  <!-- 연락처 -->
+                  <div class="form__field is-required">
+                    <label for="input1-2" class="form__label">연락처</label>
+                    <input type="text" id="input1-2" class="form__input" value="" />
+                  </div>
+
+                  <!-- 이메일 주소 -->
+                  <div class="form__field is-required">
+                    <label for="input1-3" class="form__label">이메일 주소</label>
+                    <div class="form__control">
+                      <input type="text" id="input1-3" class="form__input"/>
+                      <button type="button" class="btn btn--line btn--sm">중복확인</button>
+                    </div>
+                  </div>
+
+                  <!-- 업체명 -->
+                  <div class="form__field is-required">
+                    <label for="input1-4" class="form__label">업체명</label>
+                    <input type="text" id="input1-4" class="form__input" value="" />
+                  </div>
+
+                  <!-- 브랜드명 -->
+                  <div class="form__field is-required">
+                    <label for="input1-5" class="form__label">브랜드명</label>
+                    <input type="text" id="input1-5" class="form__input" value="" />
+                  </div>
+                </div>
+
+                <div class="form">
+                  <div class="form__field-title">업체 상세정보</div>
+                  <!-- 홈페이지 -->
+                  <div class="form__field">
+                    <label for="input2-1" class="form__label">홈페이지</label>
+                    <input type="text" id="input2-1" class="form__input" value=""/>
+                  </div>
+
+                  <!-- 카테고리 -->
+                  <div class="form__field">
+                    <label for="input2-2" class="form__label">카테고리</label>
+                    <input type="text" id="input2-2" class="form__input" value="" placeholder="신발, 의류, 악세사리 등" />
+                  </div>
+
+                  <!-- 유통채널 -->
+                  <div class="form__field">
+                    <label for="input2-3" class="form__label">유통채널</label>
+                    <input type="text" id="input2-3" class="form__input" value="" placeholder="입점중인 유통채널 정보" />
+                  </div>
+
+                  <!-- 문의내용 -->
+                  <div class="form__field">
+                    <label for="cancelReasonDetail" class="textarea__label">문의내용</label>
+                    <textarea name="cancelReasonDetail" id="cancelReasonDetail" class="textarea__field" placeholder="입점/제휴를 원하시는 브랜드에 대한 간략한 설명과 제안 내용을 남겨주세요.&#10; (파일첨부 시 생략하셔도 됩니다.)"></textarea>
+                  </div>
+
+                  <!-- 파일첨부 -->
+                  <div class="form__field">
+                    <div class="upload__file-wrap">
+                      <label for="file_btn" class="upload__label">첨부파일</label>
+                      <div class="upload__file form__control">
+                        <input
+                          type="file"
+                          id="file_btn"
+                          name="FileName"
+                          class="blind"
+                        >
+                        <input
+                          type="text"
+                          id="file1"
+                          class="file-name form__input"
+                          placeholder="선택된 파일 없음"
+                          aria-label="선택된 파일명"
+                          readonly
+                        >
+                        <button
+                          type="button"
+                          class="btn btn--line btn--secondary btn--sm file__button"
+                        >
+                          파일선택
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form">
+                  <div class="form__field-title">개인정보 수집 이용에 대한 동의</div>
+                  <!-- 홈페이지 -->
+                  <div class="form__clause">
+                    <p align="center"><strong>슈마커 공식 온라인 쇼핑몰 개인정보 수집/이용</strong></p>
+                    <p align="right">2018.05.01. 개정</p>
+
+                    <table class="table-initial" border="1" cellspacing="0" cellpadding="0">
+                      <colgroup>
+                        <col style="width: 24%;">
+                        <col style="width: 24%;">
+                        <col>
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="row"><p align="center">항목</p></th>
+                          <th scope="row"><p align="center">필수 여부</p></th>
+                          <th scope="row"><p align="center">필수</p></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td rowspan="3"><p align="center"><strong>비회원 주문</strong></p></td>
+                          <td><p align="center">수집 항목</p></td>
+                          <td><p align="center">성명,이메일 주소, 휴대폰 번호, 수령자 성명, 배송지 주소, 배송 지연 연락처, 신용카드 , 은행계좌번호 등 결제 정보</p></td>
+                        </tr>
+                        <tr>
+                          <td><p align="center">수집 목적</p></td>
+                          <td><p align="center">구매한 물품의 배송/설치 등 고객과 체결한 계약의 이행, 불만처리 등을 위한 본인확인에 필요</p></td>
+                        </tr>
+                        <tr>
+                          <td><p align="center">이용 기간</p></td>
+                          <td><p align="center">수집 목적 달성 후 개인정보 파기</p></td>
+                        </tr>
+                        <tr>
+                          <td rowspan="3"><p align="center"><strong>서비스 이용 시 생성되어 수집되는 정보</strong></p></td>
+                          <td><p align="center">수집항목</p></td>
+                          <td><p align="center">IP주소, 서비스 이용 기록, 접속 시간 등 로그, 쿠키, 모바일 기기 정보(OS버전, 광고식별자 등) 등 (쿠키의 경우, 브라우저 종료 또는 로그아웃 시 만료)</p></td>
+                        </tr>
+                        <tr>
+                          <td><p align="center">수집 목적</p></td>
+                          <td><p align="center">본인확인 및 서비스 이용 통계</p></td>
+                        </tr>
+                      </tbody>
+                    </table>
+									</div>
+                  <div class="checkbox">
+                    <input type="checkbox" id="check1" class="checkbox__input">
+                    <label for="check1" class="checkbox__label">개인정보 취급 방침에 동의합니다.</label>
+                  </div>
+                </div>
+              </div>
+              <!-- 버튼 -->
+              <div class="cta cta--fixed">
+                <button type="button" class="btn btn--line btn--secondary btn--lg btn--cut-conners">취소</button>
+                <button type="button" class="btn btn--primary btn--cut-conners">등록</button>
+              </div>
+            </div>
+          </ㅇ>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+  </div>
+
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        await Promise.all(
+          ["header", "footer"].map(async id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const file = el.dataset.file || `${id}.html`;
+            const res = await fetch(`../include/${file}`);
+            if (!res.ok) {
+              throw new Error(`${file} 로드 실패`);
+            }
+            el.innerHTML = await res.text();
+          })
+        );
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  </script>
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    window.addEventListener('load', function () {
+      
+    });
+  </script>
+</body>
+</html>
